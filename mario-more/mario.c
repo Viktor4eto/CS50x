@@ -12,7 +12,7 @@ int main(void)
     printf("Rows are %i.\n", rows);
 
     for (int i = 0; i < rows; i++){
-        for (int p = 0; p < rows; p++){
+        for (int p = rows; p >= 0; p--){
             printf("#");
         }
         printf("\n");
