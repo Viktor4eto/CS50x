@@ -15,9 +15,9 @@ int main(void)
             if(i+rows+1 >= p && rows < p){
                 printf("#");
             }
-            //else if(i+rows-1 == p && p != rows){
+            else if(rows-i-1 == p){
               //  printf("#");
-            //}
+            }
             else if (p == rows){
                 printf(".");
             }
