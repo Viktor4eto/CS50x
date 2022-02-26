@@ -11,13 +11,13 @@ int main(void)
     while (rows < 1 || rows > 8);
     printf("Rows are %i.\n", rows);
     for (int i = 0; i < rows; i++){
-        for (int p = 2*rows+1; p >= 0; p--){
-            if(i+rows+1 >= p && p != rows && p > rows){
+        for (int p = 0; p <= 2*rows+1; p++){
+            if(i+rows+1 >= p && rows < p){
                 printf("#");
             }
-            else if (i+rows+1 >= p && p != rows && ){
-                printf("#");
-            }
+            //else if(i+rows-1 == p && p != rows){
+              //  printf("#");
+            //}
             else if (p == rows){
                 printf(".");
             }
