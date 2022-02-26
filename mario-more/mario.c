@@ -13,11 +13,11 @@ int main(void)
     int count = 0;
     for (int i = 0; i < rows; i++){
         for (int p = 2*rows+1; p >= 0; p--){
-            if(p >= count){
+            if(p <= count || count >= rows){
                 printf("#");
             }
             else if (p == rows){
-                printf(" ");
+                printf(".");
             }
             else{
                 printf(" ");
