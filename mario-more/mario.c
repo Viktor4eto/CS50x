@@ -12,9 +12,12 @@ int main(void)
     printf("Rows are %i.\n", rows);
     int count = 0;
     for (int i = 0; i < rows; i++){
-        for (int p = rows; p >= 0; p--){
-            if(p <= count){
+        for (int p = 2*rows+1; p >= 0; p--){
+            if(p >= count){
                 printf("#");
+            }
+            else if (p == rows){
+                printf(" ");
             }
             else{
                 printf(" ");
