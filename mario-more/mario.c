@@ -9,7 +9,7 @@ int main(void)
         rows = get_int("Rows: ");
     }
     while (rows < 1 || rows > 8);
-    printf("Rows are %i.\n", rows);
+    //printf("Rows are %i.\n", rows);
     for (int i = 0; i < rows; i++){
         for (int p = 0; p <= 2*rows+1; p++){
             if(i+rows+1 >= p && rows < p){
