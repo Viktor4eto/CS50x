@@ -10,18 +10,30 @@ int main(void)
     }
     while (rows < 1 || rows > 8);
     //printf("Rows are %i.\n", rows);
-    for (int i = 0; i < rows; i++){
-        for (int p = 0; p <= rows+1+i; p++){
-            if(i+rows+1 >= p && rows < p){
+    //Index and change of rows
+    for (int i = 0; i < rows; i++)
+    {
+        //Changing in a row
+        for (int p = 0; p <= rows + 1 + i; p++)
+        {
+            //Outer pyramid
+            if (i + rows + 1 >= p && rows < p)
+            {
                 printf("#");
             }
-            else if(rows-i-1 <= p && rows > p){
+            //Inner pyramid
+            else if (rows - i - 1 <= p && rows > p)
+            {
                 printf("#");
             }
-            else if (p == rows){
+            //Mid section
+            else if (p == rows)
+            {
                 printf("  ");
             }
-            else{
+            //Spaces to reach the pyramids
+            else
+            {
                 printf(" ");
             }
         }
