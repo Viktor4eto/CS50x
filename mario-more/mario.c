@@ -4,6 +4,7 @@
 int main(void)
 {
     int rows;
+    int count;
     do
     {
         rows = get_int("Rows: ");
@@ -13,6 +14,7 @@ int main(void)
 
     for (int i = 0; i < rows; i++){
         for (int p = rows; p >= 0; p--){
+            if(count)
             printf("#");
         }
         printf("\n");
