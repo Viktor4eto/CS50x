@@ -13,7 +13,7 @@ int main(void)
     int count = 0;
     for (int i = 0; i < rows; i++){
         for (int p = rows; p >= 0; p--){
-            if(p <= count || p >= ){
+            if(p <= count || p == count+rows){
                 printf("#");
                 count++;
             }
