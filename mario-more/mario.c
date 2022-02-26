@@ -11,7 +11,7 @@ int main(void)
     while (rows < 1 || rows > 8);
     //printf("Rows are %i.\n", rows);
     for (int i = 0; i < rows; i++){
-        for (int p = 0; p <= 2*rows+1; p++){
+        for (int p = 0; p <= rows+1+i; p++){
             if(i+rows+1 >= p && rows < p){
                 printf("#");
             }
