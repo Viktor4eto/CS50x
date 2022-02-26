@@ -10,13 +10,12 @@ int main(void)
     }
     while (rows < 1 || rows > 8);
     printf("Rows are %i.\n", rows);
-    int count = 0;
     for (int i = 0; i < rows; i++){
         for (int p = 2*rows+1; p >= 0; p--){
-            if(count >= p-rows-1 && p != rows && p > rows){
+            if(i >= p-rows-1 && p != rows && p > rows){
                 printf("#");
             }
-            else if (count+rows+1 == p && p != rows){
+            else if (i+rows+1 == p && p != rows){
                 printf("#");
             }
             else if (p == rows){
@@ -26,7 +25,6 @@ int main(void)
                 printf(" ");
             }
         }
-        count++;
         printf("\n");
     }
 }
