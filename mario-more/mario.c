@@ -15,11 +15,11 @@ int main(void)
             if(i+rows+1 >= p && rows < p){
                 printf("#");
             }
-            else if(rows == p){
-              //  printf("#");
+            else if(rows-i-1 <= p && rows > p){
+                printf("#");
             }
             else if (p == rows){
-                printf(".");
+                printf("  ");
             }
             else{
                 printf(" ");
