@@ -17,7 +17,7 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
-
+    //Winner logic
     if (score1 > score2)
     {
         printf("Player 1 wins!");
@@ -35,12 +35,15 @@ int main(void)
 int compute_score(string word)
 {
     int sum = 0;
+    //Gives every char in the string
     for (int i = 0, n = strlen(word); i < n; i++)
     {
+        //If it is a capital letter subtract 65
         if (isupper(word[i]))
         {
             sum += POINTS[(int) word[i] - 65];
         }
+        //If it is a small letter subtract 97 (should be else if, becuase otherwise it will count punctuation)
         else if (islower(word[i]))
         {
             sum += POINTS[(int) word[i] - 97];
