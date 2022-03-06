@@ -23,8 +23,16 @@ int main(void)
 
 int compute_score(string word)
 {
+    int sum = 0;
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        
+        if(isupper(word[i]))
+        {
+            sum += POINTS[(int) word[i] - 65];
+        }
+        elif(islower(word[i]))
+        {
+            sum += POINTS[(int) word[i] - 97]
+        }
     }
 }
