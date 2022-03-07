@@ -14,10 +14,14 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    double index = 0.0588*((letters/words)*100) - 0.296*((sentences/words)*100) - 15.8;
+    float L = letters/words;
+    float S = sentences/words;
+    double index = 0.0588*L*100 - 0.296*S*100 - 15.8;
     printf("%i \n", count_letters(text));
     printf("%i \n", count_words(text));
     printf("%i \n", count_sentences(text));
+    printf("%f \n", L);
+    printf("%f \n", S);
     printf("%f \n", round(index));
 }
 
