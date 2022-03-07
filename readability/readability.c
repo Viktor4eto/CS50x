@@ -11,7 +11,10 @@ int count_sentences(string text);
 int main(void)
 {
     string text = get_string("Text: ");
-    double index = 0.0588*(count_letters(text)/count_words(text)*100) - 0.296*(count_sentences(text)/count_words(text)*100) - 15.8;
+    int letters = count_letters(text);
+    int words = count_words(text);
+    int sentences = count_sentences(text);
+    double index = 0.0588*((letters/words)*100) - 0.296*((sentences/words)*100) - 15.8;
     printf("%i \n", count_letters(text));
     printf("%i \n", count_words(text));
     printf("%i \n", count_sentences(text));
