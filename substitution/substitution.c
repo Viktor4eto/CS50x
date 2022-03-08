@@ -13,7 +13,7 @@ char substitute(char x)
 {
     int i = (int) x;
     char new;
-    if (i > 64 && i < 91)
+    if (x > 64 && x < 91)
     {
         new = argv[1][i - 65]
     }
@@ -21,5 +21,5 @@ char substitute(char x)
     {
         new = argv[1][i - 141]
     }
-    return new; 
+    return new;
 }
