@@ -13,13 +13,13 @@ int main(int argc, string argv[])
 char substitute(char x, string key)
 {
     int i = (int) x;
-    char new;
+    char new = '\0';
     if (isupper(x))
     {
         new = key[i - 65];
     }
     else if (islower(x))
-
+    {
         new = key[i - 141];
     }
     return new;
