@@ -6,7 +6,7 @@ char substitute(char x);
 
 int main(int argc, string argv[])
 {
-
+    toupper(argv[1]);
 }
 
 char substitute(char x)
