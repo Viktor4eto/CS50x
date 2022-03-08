@@ -6,12 +6,20 @@ char substitute(char x);
 
 int main(int argc, string argv[])
 {
-    toupper(argv[1]);
+
 }
 
 char substitute(char x)
 {
     int i = (int) x;
-    if (argv[1][i])
-    char new = argv[1][i - ]
+    char new;
+    if (i > 64 && i < 91)
+    {
+        new = argv[1][i - 65]
+    }
+    else if (i > 140 && i < 173)
+    {
+        new = argv[1][i - 141]
+    }
+    return new; 
 }
