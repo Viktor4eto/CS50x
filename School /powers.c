@@ -9,12 +9,11 @@ int main(void)
     do
     {
         n = get_int("n: ");
-    }
-    while (n < 0);
+    } while (n < 0);
 
-    for(int i = 1; i >= n; i++)
+    for(double i = 1.0; i >= n; i++)
     {
-        printf("%i \n", i);
+        printf("%f \n", i);
         sum += pow(i, i);
     }
     printf("%i \n", sum);
