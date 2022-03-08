@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <math.h>
 
 int main(void)
 {
@@ -12,7 +13,7 @@ int main(void)
 
     for(int i = 0; i > n; i++)
     {
-        sum +=
-        
+        sum += pow(i, i);
     }
+    printf("%i \n", sum);
 }
