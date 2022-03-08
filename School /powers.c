@@ -5,14 +5,16 @@
 int main(void)
 {
     int sum = 0;
+    int n;
     do
     {
-        int n = get_int("n: ");
+        n = get_int("n: ");
     }
     while (n < 0);
 
-    for(int i = 0; i > n; i++)
+    for(int i = 1; i >= n; i++)
     {
+        printf("%i \n", i);
         sum += pow(i, i);
     }
     printf("%i \n", sum);
