@@ -64,6 +64,16 @@ bool iscorrect (string x)
                 return 1;
             }
         }
-        return 0;
+        for (int i = 0, n = strlen(x); i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (x[i] == x[j] && i != j)
+                {
+                    printf("A double has been detected!")
+                    return 1;
+                }
+            }
+        }
     }
 }
