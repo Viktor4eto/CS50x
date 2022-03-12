@@ -9,9 +9,10 @@ int main(int argc, string argv[])
 {
     string c = get_string("plaintext: ");
     //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
-    printf("ciphertext: ")
+    printf("ciphertext: ");
     substitute(c, argv[1]);
     printf("\n");
+    return 0;
 }
 
 void substitute(string x, string key)
