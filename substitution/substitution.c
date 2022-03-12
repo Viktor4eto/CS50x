@@ -18,11 +18,11 @@ void substitute(string x, string key)
     {
         if (isupper(x[i]))
         {
-            printf("%c", key[i] - 65);
+            printf("%c", key[i]);
         }
         else if (islower(x[i]))
         {
-            printf("%c", key[i] - 141);
+            printf("%c", key[i]);
         }
         else
         {
