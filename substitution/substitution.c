@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 string substitute(string x, string key);
 
@@ -12,8 +13,7 @@ int main(int argc, string argv[])
 
 string substitute(string x, string key)
 {
-    int i = (int) x;
-    sring new;
+    string new = "";
     for (int i = 0, n = strlen(x); i < n; i++)
     {
         if (isupper(x[i]))
