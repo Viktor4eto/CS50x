@@ -4,11 +4,11 @@
 #include <string.h>
 
 void substitute (string x, string key);
-bool iscorrect (string x);
+bool iscorrect (string x, int num);
 
 int main(int argc, string argv[])
 {
-    if(iscorrect (argv[1]))
+    if(iscorrect (argv[1], argc))
     {
         return 1;
     }
@@ -44,6 +44,11 @@ void substitute(string x, string key)
 
 bool iscorrect (string x)
 {
+    if (num != 1)
+    {
+        printf("Too much or not enough arguments");
+        return 1;
+    }
     if(strlen(x) != 26)
     {
         printf("Less than 26 letters! \n");
