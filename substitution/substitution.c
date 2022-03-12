@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <string.h>
 
-void substitute (string x, string key);
-bool iscorrect (string x);
+void substitute(string x, string key);
+bool iscorrect(string x);
 
 int main(int argc, string argv[])
 {
@@ -13,7 +13,7 @@ int main(int argc, string argv[])
         printf("Too much or not enough arguments! \n");
         return 1;
     }
-    else if (iscorrect (argv[1]))
+    else if (iscorrect(argv[1]))
     {
         return 1;
     }
@@ -47,9 +47,9 @@ void substitute(string x, string key)
     }
 }
 
-bool iscorrect (string x)
+bool iscorrect(string x)
 {
-    if(strlen(x) != 26)
+    if (strlen(x) != 26)
     {
         printf("Less than 26 letters! \n");
         return 1;
