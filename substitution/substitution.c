@@ -52,6 +52,10 @@ bool iscorrect (string x)
     }
     else
     {
+        for (int i = 0, n = strlen(x); i < n; i++)
+        {
+            
+        }
         return 0;
     }
 }
