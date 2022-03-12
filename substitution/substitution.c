@@ -5,11 +5,11 @@
 
 void substitute(string x, string key);
 
-int main(void)
+int main(int argc, string argv[])
 {
     string c = get_string("C = ");
-    string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
-    substitute(c, arg);
+    //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
+    substitute(c, argv[1]);
     printf("\n");
 }
 
@@ -23,7 +23,7 @@ void substitute(string x, string key)
         }
         else if (islower(x[i]))
         {
-            printf("%c", tolower(key[(int) x[i] - 141]));
+            printf("%c", tolower(key[(int) x[i] - 97]));
         }
         else
         {
