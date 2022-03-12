@@ -4,9 +4,11 @@
 #include <string.h>
 
 void substitute(string x, string key);
+bool iscorrect (string x);
 
 int main(int argc, string argv[])
 {
+    if(iscorrect(argv[]))
     string c = get_string("plaintext: ");
     //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
     printf("ciphertext: ");
@@ -31,5 +33,14 @@ void substitute(string x, string key)
         {
             printf("%c", x[i]);
         }
+    }
+}
+
+bool iscorrect (string x)
+{
+    if(strlen(x) != 26)
+    {
+        printf("Less than 26 letters!");
+        return 1;
     }
 }
