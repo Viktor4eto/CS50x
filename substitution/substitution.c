@@ -1,7 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 
 string substitute(string x, string key);
 
