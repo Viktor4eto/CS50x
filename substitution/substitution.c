@@ -7,8 +7,9 @@ void substitute(string x, string key);
 
 int main(int argc, string argv[])
 {
-    string c = get_string("C = ");
+    string c = get_string("plaintext: ");
     //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
+    printf("ciphertext: ")
     substitute(c, argv[1]);
     printf("\n");
 }
@@ -19,7 +20,7 @@ void substitute(string x, string key)
     {
         if (isupper(x[i]))
         {
-            printf("%c", key[(int) x[i] - 65]);
+            printf("%c", toupper(key[(int) x[i] - 65]));
         }
         else if (islower(x[i]))
         {
