@@ -54,7 +54,15 @@ bool iscorrect (string x)
     {
         for (int i = 0, n = strlen(x); i < n; i++)
         {
-            
+            if (((int) x[i] >= 65 && (int) x[i] <= 90) ^ ((int) x[i] >= 97 && (int) x[i] <= 121))
+            {
+                return 0;
+            }
+            else
+            {
+                printf("Not all from the alphabet!");
+                return 1;
+            }
         }
         return 0;
     }
