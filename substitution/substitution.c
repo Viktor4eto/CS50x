@@ -23,7 +23,7 @@ void substitute(string x, string key)
         }
         else if (islower(x[i]))
         {
-            printf("%c", key[(int) x[i] - 141]);
+            printf("%c", tolower(key[(int) x[i] - 141]));
         }
         else
         {
