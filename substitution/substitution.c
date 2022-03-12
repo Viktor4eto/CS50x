@@ -5,10 +5,11 @@
 
 string substitute(string x, string key);
 
-int main(int argc, string argv[])
+int main(void)
 {
     string c = get_string("C = ");
-    printf("%s \n", substitute(c, argv[1]));
+    string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
+    printf("%s \n", substitute(c, arg));
 }
 
 string substitute(string x, string key)
