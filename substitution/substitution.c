@@ -21,7 +21,6 @@ int main(int argc, string argv[])
         printf("\n");
         return 0;
     }
-
 }
 
 void substitute(string x, string key)
@@ -68,12 +67,13 @@ bool iscorrect (string x)
         {
             for (int j = 0; j < n; j++)
             {
-                if (x[i] == x[j] && i != j)
+                if (toupper(x[i]) == toupper(x[j]) && i != j)
                 {
-                    printf("A double has been detected!")
+                    printf("A double has been detected! \n");
                     return 1;
                 }
             }
         }
+        return 0;
     }
 }
