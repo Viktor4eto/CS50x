@@ -47,7 +47,7 @@ bool iscorrect (string x)
 {
     if(strlen(x) != 26)
     {
-        printf("Less than 26 letters!");
+        printf("Less than 26 letters! \n");
         return 1;
     }
     else
