@@ -60,7 +60,7 @@ bool iscorrect (string x)
             }
             else
             {
-                printf("Not all from the alphabet!");
+                printf("Not all from the alphabet! \n");
                 return 1;
             }
         }
