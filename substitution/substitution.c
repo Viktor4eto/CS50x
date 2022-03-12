@@ -3,18 +3,25 @@
 #include <ctype.h>
 #include <string.h>
 
-void substitute(string x, string key);
+void substitute (string x, string key);
 bool iscorrect (string x);
 
 int main(int argc, string argv[])
 {
-    if(iscorrect(argv[]))
-    string c = get_string("plaintext: ");
-    //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
-    printf("ciphertext: ");
-    substitute(c, argv[1]);
-    printf("\n");
-    return 0;
+    if(iscorrect (argv[1]))
+    {
+        return 1;
+    }
+    else
+    {
+        string c = get_string("plaintext: ");
+        //string arg = "JTREKYAVOGDXPSNCUIZLFBMWHQ";
+        printf("ciphertext: ");
+        substitute(c, argv[1]);
+        printf("\n");
+        return 0;
+    }
+
 }
 
 void substitute(string x, string key)
@@ -42,5 +49,9 @@ bool iscorrect (string x)
     {
         printf("Less than 26 letters!");
         return 1;
+    }
+    else
+    {
+        return 0;
     }
 }
