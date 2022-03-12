@@ -8,7 +8,7 @@ bool iscorrect (string x);
 
 int main(int argc, string argv[])
 {
-    if (argc != 0)
+    if (argc != 2)
     {
         printf("Too much or not enough arguments! \n");
         return 1;
