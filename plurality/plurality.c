@@ -68,7 +68,7 @@ bool vote(string name)
 {
     for (int i = MAX - 1; i >= 0; i--)
     {
-        if(vote(candidates[i]))
+        if(vote(candidates[i].name))
         {
             candidates[i].votes++;
             return true;
@@ -80,12 +80,13 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    for (int i = 0; i < MAX - 1; i++)
+    for (int i = 0; i < MAX - 2; i++)
     {
         if (candidates[i].votes > candidates[i + 1].votes)
         {
-
+            candidates[i].name = candidates[i + 1].name;
         }
     }
+    printf("%s", candidates[MAX - 1].name);
     return;
 }
