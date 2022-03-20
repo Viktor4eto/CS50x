@@ -85,12 +85,12 @@ void print_winner(void)
     {
         for (int j = i + 1; j < MAX; j++)
         {
-            if (candidates[i].votes > candidates[j].votes)
+            if (candidates[i].votes >= candidates[j].votes)
             {
                 winner = i;
+                printf("%i %i \n", i, j);
             }
         }
-    printf("%s \n", candidates[winner].name);
     }
 
     return;
