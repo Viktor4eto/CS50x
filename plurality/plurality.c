@@ -68,9 +68,11 @@ bool vote(string name)
 {
     for (int i = 0; i < MAX; i++)
     {
+        printf("%s with %i \n", candidates[i].name, candidates[i].votes);
         if(name == candidates[i].name)
         {
             candidates[i].votes++;
+
             return false;
         }
     }
@@ -87,6 +89,6 @@ void print_winner(void)
             candidates[i].name = candidates[i + 1].name;
         }
     }
-    printf("%s", candidates[MAX - 1].name);
+    printf("%s \n", candidates[MAX - 1].name);
     return;
 }
