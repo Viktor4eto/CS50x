@@ -88,7 +88,7 @@ void print_winner(void)
                 winner = i;
                 //printf("%i %i \n", i, j);
             }
-        printf("%s %i\n", candidates[winner - 1].name, winner);
+        printf("%s %i\n", candidates[winner - 2].name, winner);
     }
     return;
 }
