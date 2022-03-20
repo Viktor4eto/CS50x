@@ -70,7 +70,7 @@ bool vote(string name)
     {
         if(vote(candidates[i]))
         {
-            candidates[i].vote++;
+            candidates[i].votes++;
             return true;
         }
     }
@@ -82,9 +82,9 @@ void print_winner(void)
 {
     for (int i = 0; i < MAX - 1; i++)
     {
-        if (candidates[i].vote > candidates[i + 1])
+        if (candidates[i].votes > candidates[i + 1].votes)
         {
-            
+
         }
     }
     return;
