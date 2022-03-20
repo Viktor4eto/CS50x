@@ -83,7 +83,7 @@ void print_winner(void)
 {
     for (int i = 0; i < MAX - 1; i++)
     {
-        if (candidates[].votes > candidates[i + 1].votes)
+        if (candidates[].votes > candidates[].votes)
         {
 
         }
