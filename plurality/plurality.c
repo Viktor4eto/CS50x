@@ -68,6 +68,7 @@ bool vote(string name)
 {
     for (int i = 0; i < MAX; i++)
     {
+        printf("%s and %s", name, candidates[i].name);
         if(strcmp(name, candidates[i].name) == 0)
         {
             candidates[i].votes++;
