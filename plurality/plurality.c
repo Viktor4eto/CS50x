@@ -69,7 +69,11 @@ bool vote(string name)
     if ()
     for (int i = MAX - 1; i >= 0; i--)
     {
-
+        if(name == candidates[i].name)
+        {
+            candidates[i].votes++;
+            return true;
+        }
     }
     return false;
 }
