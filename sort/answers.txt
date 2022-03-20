@@ -1,0 +1,22 @@
+sort1 uses: Bubble Sort
+
+How do you know?: When the 5000 numbers are sorted, this program is the fastest, so it has to be bubble sort. It is not the fastest when the numbers are random, but it is fast when they are sorted, which means only one execution (Omega (n)).
+
+random5000 - 0.084 s
+reversed5000 - 0.077 s
+sorted5000 - 0.025 s
+
+sort2 uses: Merge Sort
+
+How do you know?: This program is fastest when the numbers are random, so this means that it is merge sort as it is O(n log n), which is the fastest sort of the 3 when the numbers are random.
+
+random5000 - 0.023 s
+reversed5000 - 0.044 s
+sorted5000 - 0.028 s
+
+sort3 uses: Selection Sort
+
+How do you know?: This is selection sort because it is slow all the time with pretty similar values in all tests. This sort has a O(n^2) in all scenarious, which explains the test results' similarities. It also does better than bubble sort when the numbers are reversed, which makes sense as bubble sort would have a lot more to do when the numbers are reversed. 
+random5000 - 0.069 s
+reversed5000 - 0.055 s
+sorted5000 - 0.078s
