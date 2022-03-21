@@ -23,8 +23,8 @@ int main(void)
     while (n != 0)
     {
         S = S + n;
-        n--;
         printf("%i \n", n);
+        n--;
     }
     printf("n: %i, S = %i \n", n, S);
 }
