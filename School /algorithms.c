@@ -2,12 +2,16 @@
 #include <cs50.h>
 #include <math.h>
 
-int S = 0;
-int n;
 
-do
+int main(void)
 {
-     n = get_int("n = \n");
-} while (n < 0);
+    int S = 0;
+    int n;
+    
+    do
+    {
+        n = get_int("n = ");
+    } while (n < 0);
 
-printf("%i", n);
+    printf("%i", n);
+}
