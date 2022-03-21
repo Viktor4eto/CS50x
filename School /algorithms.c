@@ -14,10 +14,9 @@ int main(void)
         n = get_int("n = ");
     } while (n < 0);
 
-    while (n != 0)
+    for (int i = 0; i < n; i++)
     {
-        S = S + n;
-        n = n - 1;
+        S = S + i;
     }
     printf("n: %i, S = %i \n", n, S);
 }
