@@ -8,4 +8,6 @@ int n;
 do
 {
      n = get_int("n = \n");
-} while (n < 0)
+} while (n < 0);
+
+printf("%i", n);
