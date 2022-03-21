@@ -3,8 +3,9 @@
 #include <math.h>
 
 int S = 0;
+int n;
 
 do
 {
-    int n = get_int
-}
+     n = get_int("n = \n");
+} while (n < 0)
