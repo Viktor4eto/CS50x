@@ -4,16 +4,32 @@
 
 int main(void)
 {
-    int sum = 0;
-    int n;
-    do
-    {
-        n = get_int("n: ");
-    } while (n < 0);
+    int save;
+    int c = get_int("c: ");
+    int n[c];
 
-    for(int i = 0; i < n - 1; i++)
+    for (int i = 0; i < c; i++)
     {
-        for (int j = i + 1; )
+        n[i] = get_int("n: ");
+        //printf("\n");
     }
-    printf("%i \n", sum);
+
+
+    for(int i = 0; i < c; i++)
+    {
+        for (int j = i + 1; j < c; j++)
+        {
+            if (n[i] > n[j])
+            {
+                save = n[i];
+                n[i] = n[j];
+                n[j] = save;
+            }
+        }
+    }
+    for (int i = 0; i < c; i++)
+    {
+        printf("%i \n", n[i]);
+    }
+
 }
