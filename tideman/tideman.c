@@ -174,6 +174,7 @@ void sort_pairs(void)
                 pairs[i] = pairs[j];
                 pairs[j] = save;
             }
+            printf("%i %i\n", pairs[i].winner,pairs[i].loser);
         }
     }
     return;
