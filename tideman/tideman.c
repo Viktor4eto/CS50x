@@ -184,6 +184,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+    // TOD
     return;
 }
