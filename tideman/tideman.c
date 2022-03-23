@@ -150,6 +150,7 @@ void add_pairs(void)
                 pairs[pair_count].loser = preferences[i][j];
                 pair_count++;
             }
+            printf("%i \n", pair_count);
         }
     }
     return;
