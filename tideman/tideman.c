@@ -159,9 +159,9 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int save;
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        for (int j = i + 1; j < candidate_count; j++)
+        for (int j = i + 1; j < pair_count; j++)
         {
             if (pairs[i].winner - pairs[i].loser > pairs[j].winner - pairs[j].loser)
             {
@@ -184,6 +184,9 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TOD
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("winner: %i; Loser %i", pairs[i].winner, pairs[i].loser);
+    }
     return;
 }
