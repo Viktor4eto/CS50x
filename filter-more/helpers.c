@@ -46,13 +46,23 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    for (int i = 0; i < height; i++)
+    for (int i = -1; i < height+1; i++)
     {
-        for (int j = 0; j < width; j++)
+        if (i == -1 || i == height + 1)
         {
+            continue;
+        }
+        for (int j = -1; j < width+1; j++)
+        {
+            if (j == -1 || j == width + 1)
+            {
+                continue;
+            }
+            int count = 0;
             int avgBlue = 0;
             int avgGreen = 0;
             int avgRed = 0;
+
             if (i != 0 && j != 0 && i != height - 1 && j != width - 1)
             {
                 for (int y = i - 1; y < i + 2; y++)
