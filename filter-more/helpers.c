@@ -107,9 +107,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        avgBlue += image[y][x].rgbtBlue;
-                        avgGreen += image[y][x].rgbtGreen;
-                        avgRed += image[y][x].rgbtRed;
+                        //Gx:
                     }
                 }
                 image[i][j].rgbtBlue = round(avgBlue/count);
