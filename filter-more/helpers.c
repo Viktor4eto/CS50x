@@ -92,9 +92,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int Gy = 0;
-            int Gx = 0;
-
+            RGBTRIPLET Gy = 0;
+            RGBTRIPLET Gx = 0;
+            int sole = 0;
                 for (int y = i - 1; y < i + 2; y++)
                 {
                     if (y == -1 || y == height + 1)
@@ -108,9 +108,42 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             continue;
                         }
                         //Gx:
+                        //sole = y%2 + 1;
+                        if (x == j)
+                        {
+                            sole = 0;
+                        }
+                        else if (x > j)
+                        {
+                            sole = y%2 + 1;
+                        }
+                        else if (x < j)
+                        {
+                            sole = -(y%2 + 1);
+                        }
+                        Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
+                        Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
+                        Gx.rgbtRed += image[y][x].rgbtRed*sole;
+
+                        //Gy
+                        if (y == j)
+                        {
+                            sole = 0;
+                        }
+                        else if (y > i)
+                        {
+                            sole = x%2 + 1;
+                        }
+                        else if (y < i)
+                        {
+                            sole = -(x%2 + 1);
+                        }
+                        Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
+                        Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
+                        Gy.rgbtRed += image[y][x].rgbtRed*sole;
                     }
                 }
-                image[i][j].rgbtBlue = round(avgBlue/count);
+                image[i][j].rgbtBlue = round(sqrt(pow()));
                 image[i][j].rgbtGreen = round(avgGreen/count);
                 image[i][j].rgbtRed = round(avgRed/count);
         }
