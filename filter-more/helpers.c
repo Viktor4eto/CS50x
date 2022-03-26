@@ -130,7 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             else
                                 sole = -1;
                         }
-                        printf("%i \n", sole);
+                        
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gx.rgbtRed += image[y][x].rgbtRed*sole;
@@ -150,7 +150,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             else
                                 sole = -1;
                         }
-                        printf("%i", sole);
+
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gy.rgbtRed += image[y][x].rgbtRed*sole;
