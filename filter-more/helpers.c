@@ -115,11 +115,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         }
                         else if (x > j)
                         {
-                            sole = y%2 + 1;
+                            if (y == i)
+                                sole = 2;
+                            else
+                                sole = 1;
                         }
                         else if (x < j)
                         {
-                            sole = -(y%2 + 1);
+                            if (y == i)
+                                sole = -2;
+                            else
+                                sole = -1;
                         }
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
@@ -132,11 +138,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         }
                         else if (y > i)
                         {
-                            sole = x%2 + 1;
+                            if (x == j)
+                                sole = 2;
+                            else
+                                sole = 1;
                         }
                         else if (y < i)
                         {
-                            sole = -(x%2 + 1);
+                            if (x == j)
+                                sole = -2;
+                            else
+                                sole = -1;
                         }
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
