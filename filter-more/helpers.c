@@ -9,7 +9,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             int rgb = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed)/3);
-            
+
             image[i][j].rgbtBlue = rgb;
             image[i][j].rgbtGreen = rgb;
             image[i][j].rgbtRed = rgb;
@@ -45,6 +45,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int i = 0; i < height - 1; i++)
+    {
+        for (int j = 1; j < width - 1; j++)
+        {
+            int avgBlue =
+        }
+    }
     return;
 }
 
