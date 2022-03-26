@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdio.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -125,11 +126,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         else if (x != j && y != i)
                         {
                             if (y > i)
-                                sole = 2;
+                                sole = 1;
                             else
-                                sole = -2;
+                                sole = -1;
                         }
-
+                        printf("%i \n", sole);
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gx.rgbtRed += image[y][x].rgbtRed*sole;
@@ -145,15 +146,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         else if (y != i && x != j)
                         {
                             if (x > j)
-                                sole = 2;
+                                sole = 1;
                             else
-                                sole = -2;
+                                sole = -1;
                         }
+                        printf("%i", sole);
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gy.rgbtRed += image[y][x].rgbtRed*sole;
                     }
                 }
+
                 image[i][j].rgbtBlue = round(sqrt(pow(Gy.rgbtBlue, 2) + pow(Gx.rgbtBlue, 2)));
                 image[i][j].rgbtGreen = round(sqrt(pow(Gy.rgbtGreen, 2) + pow(Gx.rgbtGreen, 2)));
                 image[i][j].rgbtRed = round(sqrt(pow(Gy.rgbtRed, 2) + pow(Gx.rgbtRed, 2)));
