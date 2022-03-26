@@ -109,13 +109,27 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         }
                         //Gx:
                         //sole = y%2 + 1;
+                        if (x == j && y != i)
+                        {
+                            if (y > i)
+                                sole = 2
+                            else
+                                sole = -2
+                        }
+                        else if (x != j )
+                        {
+                            if (x > j)
+                                sole = 2
+                            else
+                                sole = -2
+                        }
 
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gx.rgbtRed += image[y][x].rgbtRed*sole;
 
                         //Gy:
-                        
+
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gy.rgbtRed += image[y][x].rgbtRed*sole;
