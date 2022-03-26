@@ -93,7 +93,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             RGBTRIPLE Gy;
+            Gy.rgbtBlue = 0;
+            Gy.rgbtGreen = 0;
+            Gy.rgbtRed = 0;
             RGBTRIPLE Gx;
+            Gx.rgbtBlue = 0;
+            Gx.rgbtGreen = 0;
+            Gx.rgbtRed = 0;
             int sole = 0;
                 for (int y = i - 1; y < i + 2; y++)
                 {
@@ -112,16 +118,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         if (x == j && y != i)
                         {
                             if (y > i)
-                                sole = 2
+                                sole = 2;
                             else
-                                sole = -2
+                                sole = -2;
                         }
-                        else if (x != j )
+                        else if (x != j && y != i)
                         {
-                            if (x > j)
-                                sole = 2
+                            if (y > i)
+                                sole = 2;
                             else
-                                sole = -2
+                                sole = -2;
                         }
 
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
@@ -129,7 +135,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         Gx.rgbtRed += image[y][x].rgbtRed*sole;
 
                         //Gy:
-
+                        if (y == i && x != j)
+                        {
+                            if (x > j)
+                                sole = 2;
+                            else
+                                sole = -2;
+                        }
+                        else if (y != i && x != j)
+                        {
+                            if (x > j)
+                                sole = 2;
+                            else
+                                sole = -2;
+                        }
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gy.rgbtRed += image[y][x].rgbtRed*sole;
