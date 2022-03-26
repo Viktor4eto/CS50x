@@ -101,7 +101,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gx.rgbtBlue = 0;
             Gx.rgbtGreen = 0;
             Gx.rgbtRed = 0;
-            int sole = -1;
+            int sole = 0;
                 for (int y = i - 1; y < i + 2; y++)
                 {
                     if (y == -1 || y == height + 1)
@@ -117,7 +117,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         //Gx:
                         //sole = y%2 + 1;
 
-                        /*
+
                         if (x == j && y != i)
                         {
                             if (y > i)
@@ -132,13 +132,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             else
                                 sole = -1;
                         }
-                        */
+
                         Gx.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gx.rgbtGreen += image[y][x].rgbtGreen*sole;
                         Gx.rgbtRed += image[y][x].rgbtRed*sole;
 
                         //Gy:
-                        /*
+
                         if (y == i && x != j)
                         {
                             if (x > j)
@@ -153,7 +153,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             else
                                 sole = -1;
                         }
-                        */
+
 
                         Gy.rgbtBlue += image[y][x].rgbtBlue*sole;
                         Gy.rgbtGreen += image[y][x].rgbtGreen*sole;
@@ -161,9 +161,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
 
-                image[i][j].rgbtBlue = round(sqrt(pow(double(Gy.rgbtBlue), 2.0) + pow(double(Gx.rgbtBlue), 2.0)));
-                image[i][j].rgbtGreen = round(sqrt(pow(double(Gy.rgbtGreen), 2.0) + pow(double(Gx.rgbtGreen), 2.0)));
-                image[i][j].rgbtRed = round(sqrt(pow(double(Gy.rgbtRed), 2.0) + pow(double(Gx.rgbtRed), 2.0)));
+                image[i][j].rgbtBlue = round(sqrt(pow((double) Gy.rgbtBlue, 2.0) + pow((double) Gx.rgbtBlue, 2.0)));
+                image[i][j].rgbtGreen = round(sqrt(pow((double) Gy.rgbtGreen, 2.0) + pow((double) Gx.rgbtGreen, 2.0)));
+                image[i][j].rgbtRed = round(sqrt(pow((double) Gy.rgbtRed, 2.0) + pow((double) Gx.rgbtRed, 2.0)));
         }
     }
     return;
