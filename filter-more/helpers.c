@@ -102,6 +102,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gx.rgbtGreen = 0;
             Gx.rgbtRed = 0;
             int sole = 0;
+            
                 for (int y = i - 1; y < i + 2; y++)
                 {
                     if (y == -1 || y == height + 1)
