@@ -122,8 +122,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             if (y > i)
                                 sole = 2;
-                            else
+                            else if (y < i)
                                 sole = -2;
+                            else
+                                sole = 0;
                         }
                         else if (x != j && y != i)
                         {
