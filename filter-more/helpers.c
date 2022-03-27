@@ -11,9 +11,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             int sum = image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed;
 
-            image[i][j].rgbtBlue = round(sum/3);
-            image[i][j].rgbtGreen = round(sum/3);
-            image[i][j].rgbtRed = round(sum/3);
+            image[i][j].rgbtBlue = round(sum/3.0);
+            image[i][j].rgbtGreen = round(sum/3.0);
+            image[i][j].rgbtRed = round(sum/3.0);
         }
     }
     return;
