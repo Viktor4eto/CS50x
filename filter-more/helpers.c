@@ -141,9 +141,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                         //Gy:
 
-                        if (y == i && x != j)
+                        if (y == i)
                         {
-                            if (y > i)
+                            if ()
                                 sole = 2;
                             else
                                 sole = -2;
