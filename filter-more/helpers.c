@@ -9,7 +9,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int rgb = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed)/3);
+            int rgb = (int) (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed)/3;
 
             image[i][j].rgbtBlue = rgb;
             image[i][j].rgbtGreen = rgb;
@@ -102,7 +102,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gx.rgbtGreen = 0;
             Gx.rgbtRed = 0;
             int sole = 0;
-            
+
                 for (int y = i - 1; y < i + 2; y++)
                 {
                     if (y == -1 || y == height + 1)
