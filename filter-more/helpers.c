@@ -96,7 +96,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    //grayscale(height, width, image);
+    grayscale(height, width, image);
+    blur(height, width, image);
     int soleGY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int soleGX[3][3] = {{-1, 0, 1}, {-2, 0 ,2}, {-1, 0, 1}};
 
@@ -152,8 +153,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
 
                 //image[i][j].rgbtBlue = (int) round(sqrt(pow((double) Gy.rgbtBlue, 2.0) + pow((double) Gx.rgbtBlue, 2.0)));
-                image[i][j].rgbtGreen = (int) round(sqrt(pow((double) Gy.rgbtGreen, 2.0) + pow((double) Gx.rgbtGreen, 2.0)));
-                image[i][j].rgbtRed = (int) round(sqrt(pow((double) Gy.rgbtRed, 2.0) + pow((double) Gx.rgbtRed, 2.0)));
+                //image[i][j].rgbtGreen = (int) round(sqrt(pow((double) Gy.rgbtGreen, 2.0) + pow((double) Gx.rgbtGreen, 2.0)));
+                //image[i][j].rgbtRed = (int) round(sqrt(pow((double) Gy.rgbtRed, 2.0) + pow((double) Gx.rgbtRed, 2.0)));
         }
     }
     return;
