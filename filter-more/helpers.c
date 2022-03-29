@@ -120,7 +120,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         //sole = y%2 + 1;
 
 
-                        Gx.rgbtBlue += image[y][x].rgbtBlue*soleGX[y][x];
+                        Gx.rgbtBlue += image[y][x].rgbtBlue*soleGX[i - y][j - x];
                         Gx.rgbtGreen += image[y][x].rgbtGreen*soleGX[y][x];
                         Gx.rgbtRed += image[y][x].rgbtRed*soleGX[y][x];
 
