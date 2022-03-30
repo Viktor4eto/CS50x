@@ -102,7 +102,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int soleGX[3][3] = {{-1, 0, 1}, {-2, 0 ,2}, {-1, 0, 1}};
 
     RGBTRIPLE same[height][width];
-    
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -116,14 +116,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
 
-            RGBTRIPLE Gy;
-            Gy.rgbtBlue = 0;
-            Gy.rgbtGreen = 0;
-            Gy.rgbtRed = 0;
-            RGBTRIPLE Gx;
-            Gx.rgbtBlue = 0;
-            Gx.rgbtGreen = 0;
-            Gx.rgbtRed = 0;
+            //RGBTRIPLE Gy;
+            int GYrgbtBlue = 0;
+            int GYrgbtGreen = 0;
+            int GYrgbtRed = 0;
+            //RGBTRIPLE Gx;
+            int GXrgbtBlue = 0;
+            int GXrgbtGreen = 0;
+            int GXrgbtRed = 0;
             int sole = 0;
 
                 for (int y = i - 1; y < i + 2; y++)
@@ -141,21 +141,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         //Gx:
                         //sole = y%2 + 1;
 
-                        Gx.rgbtBlue += same[y][x].rgbtBlue*soleGX[y - i + 1][x - j + 1];
-                        Gx.rgbtGreen += same[y][x].rgbtGreen*soleGX[y - i + 1][x - j+ 1];
-                        Gx.rgbtRed += same[y][x].rgbtRed*soleGX[y - i + 1][x - j + 1];
+                        GXrgbtBlue += same[y][x].rgbtBlue*soleGX[y - i + 1][x - j + 1];
+                        GXrgbtGreen += same[y][x].rgbtGreen*soleGX[y - i + 1][x - j+ 1];
+                        GXrgbtRed += same[y][x].rgbtRed*soleGX[y - i + 1][x - j + 1];
 
                         //Gy:
 
-                        Gy.rgbtBlue += same[y][x].rgbtBlue*soleGY[y - i + 1][x - j + 1];
-                        Gy.rgbtGreen += same[y][x].rgbtGreen*soleGY[y - i + 1][x - j + 1];
-                        Gy.rgbtRed += same[y][x].rgbtRed*soleGY[y - i + 1][x - j + 1];
+                        GYrgbtBlue += same[y][x].rgbtBlue*soleGY[y - i + 1][x - j + 1];
+                        GYrgbtGreen += same[y][x].rgbtGreen*soleGY[y - i + 1][x - j + 1];
+                        GYrgbtRed += same[y][x].rgbtRed*soleGY[y - i + 1][x - j + 1];
                     }
                 }
 
-                image[i][j].rgbtBlue = (int) round(sqrt(pow((double) Gy.rgbtBlue, 2.0) + pow((double) Gx.rgbtBlue, 2.0)));
-                image[i][j].rgbtGreen = (int) round(sqrt(pow((double) Gy.rgbtGreen, 2.0) + pow((double) Gx.rgbtGreen, 2.0)));
-                image[i][j].rgbtRed = (int) round(sqrt(pow((double) Gy.rgbtRed, 2.0) + pow((double) Gx.rgbtRed, 2.0)));
+                image[i][j].rgbtBlue = (int) round(sqrt(pow((double) GYrgbtBlue, 2.0) + pow((double) GXrgbtBlue, 2.0)));
+                image[i][j].rgbtGreen = (int) round(sqrt(pow((double) GYrgbtGreen, 2.0) + pow((double) GXrgbtGreen, 2.0)));
+                image[i][j].rgbtRed = (int) round(sqrt(pow((double) GYrgbtRed, 2.0) + pow((double) GXrgbtRed, 2.0)));
         }
     }
     return;
