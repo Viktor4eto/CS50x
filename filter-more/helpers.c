@@ -149,7 +149,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                         GYrgbtBlue += same[y][x].rgbtBlue*soleGY[y - i + 1][x - j + 1];
                         GYrgbtGreen += same[y][x].rgbtGreen*soleGY[y - i + 1][x - j + 1];
-                        GYrgbtRed += same[y][x].rgbtRed*soleGY[y - i + 1][x - j + 1];
+                        GYrgbtRed += same[y][x].rgbtRed*soleGY[y - i + 1][x - j + 1];  
                     }
                 }
 
