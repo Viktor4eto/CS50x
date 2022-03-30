@@ -124,7 +124,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int GXrgbtBlue = 0;
             int GXrgbtGreen = 0;
             int GXrgbtRed = 0;
-            int sole = 0;
+            //int sole = 0;
 
                 for (int y = i - 1; y < i + 2; y++)
                 {
