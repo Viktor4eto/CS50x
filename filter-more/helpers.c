@@ -153,9 +153,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
 
-                int B = round(sqrt(pow((double) GYrgbtBlue, 2.0) + pow((double) GXrgbtBlue, 2.0)));
-                int G = round(sqrt(pow((double) GYrgbtGreen, 2.0) + pow((double) GXrgbtGreen, 2.0)));
-                int R = round(sqrt(pow((double) GYrgbtRed, 2.0) + pow((double) GXrgbtRed, 2.0)));
+                int B = round(sqrt(pow((double) GYrgbtBlue, 2) + pow((double) GXrgbtBlue, 2)));
+                int G = round(sqrt(pow((double) GYrgbtGreen, 2) + pow((double) GXrgbtGreen, 2)));
+                int R = round(sqrt(pow((double) GYrgbtRed, 2) + pow((double) GXrgbtRed, 2)));
 
                 if (B > 255)
                     B = 255;
