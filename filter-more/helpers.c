@@ -117,13 +117,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
 
             //RGBTRIPLE Gy;
-            int GYrgbtBlue = 0;
-            int GYrgbtGreen = 0;
-            int GYrgbtRed = 0;
+            long GYrgbtBlue = 0;
+            long GYrgbtGreen = 0;
+            long GYrgbtRed = 0;
             //RGBTRIPLE Gx;
-            int GXrgbtBlue = 0;
-            int GXrgbtGreen = 0;
-            int GXrgbtRed = 0;
+            long GXrgbtBlue = 0;
+            long GXrgbtGreen = 0;
+            long GXrgbtRed = 0;
             //int sole = 0;
 
                 for (int y = i - 1; y < i + 2; y++)
@@ -153,9 +153,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
 
-                int B = (int) round(sqrt(pow((double) GYrgbtBlue, 2.0) + pow((double) GXrgbtBlue, 2.0)));
-                int G = (int) round(sqrt(pow((double) GYrgbtGreen, 2.0) + pow((double) GXrgbtGreen, 2.0)));
-                int R = (int) round(sqrt(pow((double) GYrgbtRed, 2.0) + pow((double) GXrgbtRed, 2.0)));
+                int B = round(sqrt(pow((double) GYrgbtBlue, 2.0) + pow((double) GXrgbtBlue, 2.0)));
+                int G = round(sqrt(pow((double) GYrgbtGreen, 2.0) + pow((double) GXrgbtGreen, 2.0)));
+                int R = round(sqrt(pow((double) GYrgbtRed, 2.0) + pow((double) GXrgbtRed, 2.0)));
 
                 if (B > 255)
                     B = 255;
