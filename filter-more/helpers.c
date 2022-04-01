@@ -128,16 +128,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                 for (int y = i - 1; y < i + 2; y++)
                 {
-                    if (y == - 1 || y == height + 1)
-                    {
-                        continue;
-                    }
+                    //if (y == - 1 || y == height + 1)
+                        //continue;
                     for (int x = j - 1; x < j + 2; x++)
                     {
-                        if (x == - 1 || x == width + 1)
-                        {
-                            continue;
-                        }
+                        //if (x == - 1 || x == width + 1)
+                            //continue;
                         //Gx:
                         //sole = y%2 + 1;
 
