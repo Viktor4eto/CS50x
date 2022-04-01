@@ -101,11 +101,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int soleGY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int soleGX[3][3] = {{-1, 0, 1}, {-2, 0 ,2}, {-1, 0, 1}};
 
-    RGBTRIPLE same[height][width];
+    RGBTRIPLE same[height + 2][width + 2];
 
-    for (int i = 0; i < height; i++)
+    for (int i = 1; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 1; j < width; j++)
         {
             same[i][j] = image[i][j];
         }
