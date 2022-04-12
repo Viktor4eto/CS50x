@@ -100,7 +100,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //blur(height, width, image);
     int soleGY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int soleGX[3][3] = {{-1, 0, 1}, {-2, 0 ,2}, {-1, 0, 1}};
-    
+
     double GYrgbtBlue;
     double GYrgbtGreen;
     double GYrgbtRed;
@@ -144,9 +144,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         //Gx:
                         //sole = y%2 + 1;
 
-                        GXrgbtBlue += same[y][x].rgbtBlue*soleGX[y - i + 1][x - j + 1];
-                        GXrgbtGreen += same[y][x].rgbtGreen*soleGX[y - i + 1][x - j + 1];
-                        GXrgbtRed += same[y][x].rgbtRed*soleGX[y - i + 1][x - j + 1];
+                        GXrgbtBlue += (same[y][x].rgbtBlue*soleGX[y - i + 1][x - j + 1]);
+                        GXrgbtGreen += (same[y][x].rgbtGreen*soleGX[y - i + 1][x - j + 1]);
+                        GXrgbtRed += (same[y][x].rgbtRed*soleGX[y - i + 1][x - j + 1]);
 
                         //Gy:
 
@@ -157,7 +157,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
 
                 int B = round(sqrt(pow(GYrgbtBlue, 2.0) + pow(GXrgbtBlue, 2.0)));
-                int G = round(sqrt(pow((GYrgbtGreen, 2.0) + pow(GXrgbtGreen, 2.0)));
+                int G = round(sqrt(pow(GYrgbtGreen, 2.0) + pow(GXrgbtGreen, 2.0)));
                 int R = round(sqrt(pow(GYrgbtRed, 2.0) + pow(GXrgbtRed, 2.0)));
 
                 if (B > 255)
