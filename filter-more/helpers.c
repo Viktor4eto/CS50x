@@ -100,7 +100,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //blur(height, width, image);
     int soleGY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     int soleGX[3][3] = {{-1, 0, 1}, {-2, 0 ,2}, {-1, 0, 1}};
-
+    double GYrgbtBlue = 0;
+    double GYrgbtGreen = 0;
+    double GYrgbtRed = 0;
+            //RGBTRIPLE Gx;
+    double GXrgbtBlue = 0;
+    double GXrgbtGreen = 0;
+    double GXrgbtRed = 0;
     RGBTRIPLE same[height][width];
 
     for (int i = 0; i < height; i++)
@@ -117,13 +123,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
 
             //RGBTRIPLE Gy;
-            double GYrgbtBlue = 0;
-            double GYrgbtGreen = 0;
-            double GYrgbtRed = 0;
+             GYrgbtBlue = 0;
+             GYrgbtGreen = 0;
+             GYrgbtRed = 0;
             //RGBTRIPLE Gx;
-            double GXrgbtBlue = 0;
-            double GXrgbtGreen = 0;
-            double GXrgbtRed = 0;
+             GXrgbtBlue = 0;
+             GXrgbtGreen = 0;
+             GXrgbtRed = 0;
             //int sole = 0;
 
                 for (int y = i - 1; y < i + 2; y++)
