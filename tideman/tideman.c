@@ -173,9 +173,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("winner: %i; Loser %i \n", pairs[i].winner, pairs[i].loser);
-    }
+    
     return;
 }
