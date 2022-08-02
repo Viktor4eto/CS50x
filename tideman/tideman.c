@@ -134,17 +134,10 @@ void add_pairs(void)
         {
             if (preferences[i][j] > preferences[j][i])
             {
-                pairs[pair_count].winner = preferences[i][j];
-                pairs[pair_count].loser = preferences[j][i];
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
                 pair_count++;
             }
-            else if (preferences[i][j] < preferences[j][i])
-            {
-                pairs[pair_count].winner = preferences[j][i];
-                pairs[pair_count].loser = preferences[i][j];
-                pair_count++;
-            }
-            printf("%i \n", pair_count);
         }
     }
     return;
