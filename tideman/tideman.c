@@ -146,20 +146,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    pair save;
-    for (int i = 0; i < pair_count; i++)
-    {
-        for (int j = i + 1; j < pair_count; j++)
-        {
-            if (pairs[i].winner - pairs[i].loser > pairs[j].winner - pairs[j].loser)
-            {
-                save = pairs[i];
-                pairs[i] = pairs[j];
-                pairs[j] = save;
-            }
-            printf("%i %i\n", pairs[i].winner,pairs[i].loser);
-        }
-    }
+    //TODO
     return;
 }
 
@@ -173,6 +160,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    
+    //TODO
     return;
 }
