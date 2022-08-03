@@ -1,16 +1,18 @@
 {
   "extensions": [
     "/opt/cs50/extensions/cs50-0.0.1.vsix", 
-    "/opt/cs50/extensions/ddb50-0.0.1.vsix", 
     "/opt/cs50/extensions/phpliteadmin-0.0.1.vsix", 
+    "/opt/cs50/extensions/workspace-layout-0.0.7.vsix", 
+    "cs50.ddb50", 
+    "cs50.extension-uninstaller", 
     "ms-python.python", 
     "ms-vscode.cpptools", 
     "ms-vscode.hexeditor", 
-    "ms-vsliveshare.vsliveshare-audio", 
-    "MS-vsliveshare.vsliveshare-pack", 
+    "ms-vsliveshare.vsliveshare-pack", 
+    "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:45351eda536b6c7cee2b686eb57116e6a8b21e36", 
+  "image": "ghcr.io/cs50/codespace:8fd6e6735968c4923888c43aafa343fbc6570831", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
@@ -32,7 +34,7 @@
     "editor.parameterHints.enabled": false, 
     "editor.quickSuggestions": false, 
     "editor.renderIndentGuides": false, 
-    "editor.renderWhitespace": "boundary", 
+    "editor.renderWhitespace": "selection", 
     "editor.selectionHighlight": false, 
     "editor.semanticTokenColorCustomizations": {
       "[Default Dark+]": {
@@ -49,9 +51,11 @@
       }
     }, 
     "editor.suggestOnTriggerCharacters": false, 
-    "experiments.override.gettingStarted.overrideCategory.ms-python.python.pythonDataScienceWelcome.when": "false", 
-    "experiments.override.gettingStarted.overrideCategory.ms-python.python.pythonWelcome.when": "false", 
-    "experiments.override.gettingStarted.overrideCategory.ms-vscode.cpptools.cppWelcome.when": "false", 
+    "extension-uninstaller.uninstall": [
+      "github.copilot", 
+      "github.copilot-nightly", 
+      "tabnine.tabnine-vscode"
+    ], 
     "extensions.ignoreRecommendations": true, 
     "files.autoSave": "afterDelay", 
     "files.exclude": {
@@ -82,6 +86,7 @@
       "workbench.action.toggleSidebarVisibility"
     ], 
     "terminal.integrated.defaultProfile.linux": "bash", 
+    "terminal.integrated.persistentSessionReviveProcess": "never", 
     "terminal.integrated.profiles.linux": {
       "JavaScript Debug Terminal": null, 
       "bash": {
@@ -96,6 +101,9 @@
     "terminal.integrated.tabs.showActiveTerminal": "never", 
     "window.autoDetectColorScheme": true, 
     "workbench.colorCustomizations": {
+      "[GitHub Light Default]": {
+        "terminal.foreground": "#000000"
+      }, 
       "editor.lineHighlightBorder": "#0000", 
       "editorError.foreground": "#0000", 
       "editorGutter.addedBackground": "#0000", 
