@@ -178,8 +178,12 @@ bool cycles(bool locked[][], int a)
         {
             for (int j = i + 1; j < candidate_count; j++)
             {
-                if
+                if (locked[i][j] == true)
+                {
+                    counter++;
+                }
             }
+        counter = 0;
         }
 }
 // Lock pairs into the candidate graph in order, without creating cycles
