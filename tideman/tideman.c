@@ -27,6 +27,7 @@ int pair_count;
 int candidate_count;
 
 // Function prototypes
+bool cycles(int a);
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
@@ -171,7 +172,7 @@ void sort_pairs(void)
     }
     return;
 }
-bool cycles(bool locked[][], int a)
+bool cycles(int a)
 {
     int counter = 0;
     	for (int i = 0; i < candidate_count; i++)
@@ -196,7 +197,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (cycles(locked, i))
+        if (cycles(i))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
