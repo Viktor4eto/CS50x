@@ -179,7 +179,7 @@ bool cycles(int a)
         {
             for (int j = i + 1; j < candidate_count; j++)
             {
-                if (locked[i][j] == true ^ pairs[a].winner == i)
+                if (locked[i][j] == true)
                 {
                     counter++;
                 }
