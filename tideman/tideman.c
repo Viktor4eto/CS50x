@@ -150,7 +150,7 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         victory[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].winner][pairs[i].loser];
-        printf("%i \n", preferences[pairs[i].winner][pairs[i].loser]);
+        printf("%i %i \n", preferences[pairs[i].winner][pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser]);
     }
 
     for (int i = 0; i < pair_count - 1; i++)
