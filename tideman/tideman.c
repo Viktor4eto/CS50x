@@ -171,7 +171,10 @@ void sort_pairs(void)
     }
     return;
 }
+bool cycles(bool locked[][])
+{
 
+}
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
