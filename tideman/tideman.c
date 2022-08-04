@@ -149,7 +149,7 @@ void sort_pairs(void)
     int victory[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        victory[i] = preferences[pairs[i].winner][pairs[i].loser] - references[pairs[i].winner][pairs[i].loser];
+        victory[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].winner][pairs[i].loser];
     }
 
     for (int i = 0; i < 8; i++)
