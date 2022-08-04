@@ -149,8 +149,8 @@ void sort_pairs(void)
     int victory[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        victory[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].winner][pairs[i].loser];
-        printf("%i %i \n", preferences[pairs[i].winner][pairs[i].loser], preferences[pairs[i].winner][pairs[i].loser]);
+        victory[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
+        printf("%i %i \n", preferences[pairs[i].winner][pairs[i].loser], preferences[pairs[i].loser][pairs[i].winner]);
     }
 
     for (int i = 0; i < pair_count - 1; i++)
