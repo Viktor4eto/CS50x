@@ -153,9 +153,9 @@ void sort_pairs(void)
         printf("%i \n", victory[i]);
     }
 
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < pair_count - 1; i++)
     {
-        for (int j = i + 1; j < 9; j++)
+        for (int j = i + 1; j < pair_count; j++)
         {
             if(victory[i] < victory[j])
             {
