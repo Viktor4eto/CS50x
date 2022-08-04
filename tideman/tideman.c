@@ -171,16 +171,23 @@ void sort_pairs(void)
     }
     return;
 }
-bool cycles(bool locked[][])
+bool cycles(bool locked[][], int a)
 {
-
+    int counter = 0;
+    	for (int i = 0; i < candidate_count; i++)
+        {
+            for (int j = i + 1; j < candidate_count; j++)
+            {
+                if
+            }
+        }
 }
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (cycles(locked))
+        if (cycles(locked, i))
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
     return;
