@@ -178,13 +178,18 @@ bool cycles(bool locked[][], int a)
         {
             for (int j = i + 1; j < candidate_count; j++)
             {
-                if (locked[i][j] == true)
+                if (locked[i][j] == true ^ pairs[a].winner == i)
                 {
                     counter++;
                 }
             }
+        if (counter >= 1)
+        {
+            return false;
+        }
         counter = 0;
         }
+    return true;
 }
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
@@ -192,7 +197,10 @@ void lock_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         if (cycles(locked, i))
-        locked[pairs[i].winner][pairs[i].loser] = true;
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+
     }
     return;
 }
