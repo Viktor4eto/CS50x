@@ -27,7 +27,7 @@ int pair_count;
 int candidate_count;
 
 // Function prototypes
-bool cycles(int a);
+bool cycles(int loser, int winner);
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
@@ -148,18 +148,19 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int victory[pair_count];
+    //fills in the victory array to help with sorting
     for (int i = 0; i < pair_count; i++)
     {
         victory[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-        printf("%i %i \n", preferences[pairs[i].winner][pairs[i].loser], preferences[pairs[i].loser][pairs[i].winner]);
     }
 
     for (int i = 0; i < pair_count - 1; i++)
     {
         for (int j = i + 1; j < pair_count; j++)
         {
-            if(victory[i] < victory[j])
+            if (victory[i] < victory[j])
             {
+                //takes care of sorting the pairs in both arrays
                 int temp = victory[i];
                 pair temp_pair = pairs[i];
                 victory[i] = victory[j];
@@ -172,30 +173,81 @@ void sort_pairs(void)
     }
     return;
 }
-bool cycles(int a)
+
+//recursive function that checks for cycles in the locked[i][j] array
+bool cycles(int loser, int winner)
 {
+    if (winner == loser)
+    {
+        return true;
+    }
 
-
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[i][winner] == true)
+        {
+            return cycles(loser, i);
+        }
+    }
 
     return false;
+
+    /*
+    int is = 0;
+    for (int j = 0; j < candidate_count; j++)
+    {
+         int counter = 0;
+        for (int i = 0; i < candidate_count; i++)
+        {
+
+            if (locked[i][j] == true)
+                counter++;
+        }
+        if (counter == 1)
+            is++;
+    }
+    if (is == candidate_count - 1)
+        return true;
+
+    //printf("%i \n", is);
+    return false;
+    */
 }
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (!cycles(i))
+        if (!cycles(pairs[i].loser, pairs[i].winner))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
 
     }
+
     return;
 }
+//^uses the cycles() function to determine if there is a cycle and if there isn't it fills the locked[][] array
 
 // Print the winner of the election
 void print_winner(void)
 {
-    //TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        int c = 0;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[j][i] == true)
+            {
+                c++;
+                break;
+            }
+        }
+        if (c == 0)
+        {
+            printf("%s\n", candidates[i]);
+        }
+        //return;
+    }
     return;
 }
