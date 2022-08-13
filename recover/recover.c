@@ -12,14 +12,7 @@ int main(int argc, char *argv[])
 
     while (feof(raw) == 0)
     {
-        int i = 0;
-        printf("works \n");
-
-        if (i == 2)
-        {
-            break;
-        }
-        i++;
+        
     }
 
     return 0;
