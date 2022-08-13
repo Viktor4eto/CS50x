@@ -33,22 +33,23 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             sprintf(filename, "%03i", JPEG_counter);
-            JPEG_counter++;
+            //JPEG_counter++;
             FILE *current = fopen(filename, "w")
             fwrite (buffer, sizeof(BYTE), 512, current)
 
             while (!new)
             {
                 fread(buffer, sizeof(BYTE), 512, raw);
-                
+
                 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
                 {
                     new = true;
+                    break;
                 }
 
                 else
                 {
-                    fwrite (buffer, sizeof(BYTE), 512, current)
+                    fwrite (buffer, sizeof(BYTE), 512, current);
                 }
             }
         }
