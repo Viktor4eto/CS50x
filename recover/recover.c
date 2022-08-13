@@ -5,17 +5,27 @@ typedef uint8_t  BYTE;
 
 int main(int argc, char *argv[])
 {
-    int buffer[512] = malloc(512*(sizeof(BYTE)))
     if (argv[1] == NULL)
     {
         printf("Usage: ./recover IMAGE \n");
         return 1;
     }
+
+    BYTE *buffer = malloc(512 * (sizeof(BYTE)));
+
+    if (buffer == NULL)
+    {
+        printf ("malloc has failed \n");
+        free;
+        return 2;
+    }
+
     FILE *raw = fopen(argv[1], "r");
 
     while (feof(raw) == 0)
     {
-        fread()
+        fread(buffer, sizeof(BYTE), 512, raw);
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3]))
     }
 
     return 0;
