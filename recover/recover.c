@@ -5,6 +5,7 @@ typedef uint8_t  BYTE;
 
 int main(int argc, char *argv[])
 {
+    int buffer[512] = malloc(512*(sizeof(BYTE)))
     if (argv[1] == NULL)
     {
         printf("Usage: ./recover IMAGE \n");
