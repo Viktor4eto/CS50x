@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
+    int JPEG_counter = 0; 
 
     if (buffer == NULL)
     {
@@ -25,7 +26,11 @@ int main(int argc, char *argv[])
     while (feof(raw) == 0)
     {
         fread(buffer, sizeof(BYTE), 512, raw);
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3]))
+
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+
+        }
     }
 
     return 0;
