@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
     int JPEG_counter = 0;
     string filename;
+    bool new = false;
 
     if (buffer == NULL)
     {
@@ -31,8 +32,25 @@ int main(int argc, char *argv[])
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            sprintf()
-            FILE *current = fopen()
+            sprintf(filename, "%03i", JPEG_counter);
+            JPEG_counter++;
+            FILE *current = fopen(filename, "w")
+            fwrite (buffer, sizeof(BYTE), 512, current)
+
+            while (!new)
+            {
+                fread(buffer, sizeof(BYTE), 512, raw);
+                
+                if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+                {
+                    new = true;
+                }
+
+                else
+                {
+                    fwrite (buffer, sizeof(BYTE), 512, current)
+                }
+            }
         }
     }
 
