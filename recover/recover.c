@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     while (feof(raw) == 0)
     {
-        
+        fread()
     }
 
     return 0;
