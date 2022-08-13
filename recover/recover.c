@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 typedef uint8_t  BYTE;
 
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
     int JPEG_counter = 0;
+    string filename;
 
     if (buffer == NULL)
     {
