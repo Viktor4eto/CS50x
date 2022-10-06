@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 
     if (buffer == NULL)
     {
-        printf ("malloc has failed \n");
-        free;
+        printf("malloc has failed \n");
+        free(buffer);
         return 2;
     }
 
@@ -55,6 +55,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-
+    free(buffer);
     return 0;
 }
