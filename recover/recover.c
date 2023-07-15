@@ -51,19 +51,15 @@ int main(int argc, char *argv[])
             sprintf(newFiles, "%03i.jpg", JPEG_counter);
             JPEG_counter++;
 
-            printf("Not made file \n");
-
             current = fopen(newFiles, "w");
 
             printf("Made file \n");
 
             fwrite (buffer, 1, 512, current);
-
-            printf("Things \n");
             alreadyRead = true;
             }
 
-            if(alreadyRead){
+            if(JPEG_counter > 0){
                 fwrite (buffer, 1, 512, current);
             }
 
