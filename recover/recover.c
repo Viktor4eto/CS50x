@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
     int JPEG_counter = 0;
-    string filename;
-    bool new = false;
+    FILE *current;
     bool alreadyRead = false;
+    bool new = false;
 
     if (buffer == NULL)
     {
@@ -32,13 +32,14 @@ int main(int argc, char *argv[])
 
     printf("File opened!\n");
 
-    while (true)
+    while (!feof(raw))
     {
+
+        printf("Enter \n");
+
         if(!alreadyRead){
             fread(buffer, 1, 512, raw);
         }
-        
-        printf("Enter \n");
 
         new = false;
 
@@ -62,19 +63,18 @@ int main(int argc, char *argv[])
 
             printf("Not made file \n");
 
-            FILE *current = fopen(newFiles, "w");
+            current = fopen(newFiles, "w");
 
             printf("Made file \n");
 
             free(newFiles);
 
             fwrite (buffer, 1, 512, current);
-            fread(buffer, 1, 512, raw);
 
             printf("Things \n");
 
 
-            while (!new)
+            while (!new && !feof(raw))
             {
                 printf("Loop 2 enter \n");
 
@@ -99,6 +99,7 @@ int main(int argc, char *argv[])
 
         }
     }
+    fwrite (buffer, 1, 512, current);
 
     printf("Exit \n");
 
