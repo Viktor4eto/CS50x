@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
             fwrite (buffer, 1, 512, current);
 
             printf("Things \n");
-
+            alreadyRead = true;
             }
 
             if(alreadyRead){
