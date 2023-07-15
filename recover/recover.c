@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
             JPEG_counter++;
 
             current = fopen(newFiles, "w");
+            free(newFiles);
 
             printf("Made file \n");
 
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
 
     printf("Exit \n");
 
-    free(newFiles);
+    //free(newFiles);
     free(buffer);
     fclose(current);
     fclose(raw);
