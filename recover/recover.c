@@ -15,9 +15,7 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
     int JPEG_counter = 0;
-    FILE *current;
-    bool alreadyRead = false;
-    bool new = false;
+
 
     if (buffer == NULL)
     {
@@ -27,13 +25,12 @@ int main(int argc, char *argv[])
     }
 
     FILE *raw = fopen(argv[1], "r");
+    FILE *current;
 
     printf("File opened!\n");
 
     while (fread(buffer, 1, 512, raw) == 512)
     {
-
-        printf("Enter \n");
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -60,6 +57,7 @@ int main(int argc, char *argv[])
             }
 
             if(JPEG_counter > 0){
+                printf("Wrote \n");
                 fwrite (buffer, 1, 512, current);
             }
 
