@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
-    char *newFiles = NULL;
+    string newFiles = "";
     int JPEG_counter = 0;
 
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            //printf("Image \n");
+            printf("Image \n");
             if(found){
                 fclose(current);
             }
