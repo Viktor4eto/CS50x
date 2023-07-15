@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     int JPEG_counter = 0;
     string filename;
     bool new = false;
+    bool alreadyRead = false;
 
     if (buffer == NULL)
     {
@@ -34,7 +35,10 @@ int main(int argc, char *argv[])
         printf("Enter \n");
 
         new = false;
-        fread(buffer, 1, 512, raw);
+        if(!alreadyRead)
+        {
+            fread(buffer, 1, 512, raw);
+        }
 
         printf("fread \n");
 
@@ -76,6 +80,7 @@ int main(int argc, char *argv[])
                 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
                 {
                     new = true;
+                    alreadyRead = true;
                     printf("Loop 2 exit \n");
                 }
 
