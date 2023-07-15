@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
 
         printf("Enter \n");
 
-        if(!alreadyRead){
+        //if(!alreadyRead){
             fread(buffer, 1, 512, raw);
-        }
+        //}
 
         new = false;
 
@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
                 {
                     new = true;
                     alreadyRead = true;
+                    fseek()
                     printf("Loop 2 exit \n");
                     break;
                 }
