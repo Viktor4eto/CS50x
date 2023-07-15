@@ -41,8 +41,16 @@ int main(int argc, char *argv[])
         {
             printf("Image \n");
 
-            string newFiles = JPEG_counter;
-            //sprintf(newFiles, "%i", JPEG_counter);
+            char *newFiles = malloc(3*sizeof(char));
+
+            if (newFiles == NULL)
+            {
+                printf("malloc has failed \n");
+                free(newFiles);
+                return 3;
+            }
+
+            sprintf(newFiles, "%03i", JPEG_counter);
             JPEG_counter++;
 
             printf("Not made file \n");
