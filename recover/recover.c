@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
-    char *newFiles;
+    char *newFiles = NULL;
     int JPEG_counter = 0;
 
 
@@ -42,20 +42,10 @@ int main(int argc, char *argv[])
                 fclose(current);
             }
 
-            newFiles = malloc(7*sizeof(char));
-
-            if (newFiles == NULL)
-            {
-                printf("malloc has failed \n");
-                free(newFiles);
-                return 3;
-            }
-
             sprintf(newFiles, "%03i.jpg", JPEG_counter);
             JPEG_counter++;
 
             current = fopen(newFiles, "w");
-            free(newFiles);
             //printf("Made file \n");
 
             found = true;
