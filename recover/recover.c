@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
                 fclose(current);
             }
 
-            newFiles = malloc(3*sizeof(char));
+            newFiles = malloc(7*sizeof(char));
 
             if (newFiles == NULL)
             {
