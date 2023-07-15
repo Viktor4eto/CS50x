@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
     int JPEG_counter = 0;
-    string filename;
+    //string filename;
     bool new = false;
 
     if (buffer == NULL)
