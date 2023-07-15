@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
 
     bool found = false;
 
-    printf("File opened!\n");
+    //printf("File opened!\n");
 
     while (fread(buffer, 1, 512, raw) == 512)
     {
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            printf("Image \n");
+            //printf("Image \n");
 
             newFiles = malloc(3*sizeof(char));
 
@@ -52,14 +52,14 @@ int main(int argc, char *argv[])
             JPEG_counter++;
 
             current = fopen(newFiles, "w");
-            
-            printf("Made file \n");
+
+            //printf("Made file \n");
 
             found = true;
             }
 
             if(found){
-                printf("Wrote \n");
+                //printf("Wrote \n");
                 fwrite (buffer, 1, 512, current);
             }
 
