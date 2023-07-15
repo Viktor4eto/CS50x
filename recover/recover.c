@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     {
         printf("Enter \n");
 
+        new = false;
         fread(buffer, 1, 512, raw);
 
         printf("fread \n");
@@ -63,7 +64,7 @@ int main(int argc, char *argv[])
 
             fwrite (buffer, 1, 512, current);
 
-            new = false;
+
             printf("Things \n");
 
 
