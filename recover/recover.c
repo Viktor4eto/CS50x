@@ -32,22 +32,15 @@ int main(int argc, char *argv[])
 
     printf("File opened!\n");
 
-    while (!feof(raw))
+    while (fread(buffer, 1, 512, raw) == 512)
     {
 
         printf("Enter \n");
 
-        //if(!alreadyRead){
-            fread(buffer, 1, 512, raw);
-        //}
-
-        new = false;
-
-        printf("fread \n");
-
         if ((buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0))
         {
             printf("Image \n");
+            fclose(current);
 
             char *newFiles = malloc(3*sizeof(char));
 
@@ -73,29 +66,9 @@ int main(int argc, char *argv[])
 
             printf("Things \n");
 
-
-            while (!new && !feof(raw))
-            {
-                printf("Loop 2 enter \n");
-
-                fread(buffer, 1, 512, raw);
-
-                if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-                {
-                    new = true;
-                    alreadyRead = true;
-                    fseek(raw, -512, SEEK_CUR);
-                    printf("Loop 2 exit \n");
-                    break;
-                }
-
-                else
-                {
-                    fwrite (buffer, 1, 512, current);
-                }
-
-
             }
+
+            fwrite (buffer, 1, 512, current);
 
 
         }
