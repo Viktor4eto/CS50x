@@ -32,8 +32,12 @@ int main(int argc, char *argv[])
 
     printf("File opened!\n");
 
-    while (alreadyRead || fread(buffer, 1, 512, raw) == 512)
+    while (true)
     {
+        if(!alreadyRead){
+            fread(buffer, 1, 512, raw);
+        }
+        
         printf("Enter \n");
 
         new = false;
