@@ -28,11 +28,11 @@ int main(int argc, char *argv[])
 
     FILE *raw = fopen(argv[1], "r");
 
-    fread(buffer, 1, 512, raw);
+
 
     printf("File opened!\n");
 
-    while (true)
+    while (fread(buffer, 1, 512, raw) == 512)
     {
         printf("Enter \n");
 
