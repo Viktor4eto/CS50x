@@ -27,37 +27,55 @@ int main(int argc, char *argv[])
 
     FILE *raw = fopen(argv[1], "r");
 
-    printf("File opened!");
-    
+    printf("File opened!\n");
+
     while (feof(raw) == 0)
     {
+        printf("Enter \n");
+
         fread(buffer, 1, 512, raw);
+
+        printf("fread \n");
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            printf("Image \n");
+
             string newFiles = NULL;
             sprintf(newFiles, "%03i", JPEG_counter);
             JPEG_counter++;
             FILE *current = fopen(filename, "w");
-            fwrite (buffer, sizeof(BYTE), 512, current);
+            fwrite (buffer, 1, 512, current);
+
+            printf("Things \n");
+
 
             while (!new)
             {
-                fread(buffer, sizeof(BYTE), 512, raw);
+                printf("Loop 2 enter \n");
+
+                fread(buffer, 1, 512, raw);
 
                 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
                 {
                     new = true;
-                    break;
                 }
 
                 else
                 {
-                    fwrite (buffer, sizeof(BYTE), 512, current);
+                    fwrite (buffer, 1, 512, current);
                 }
+
+                printf("Loop 2 end \n");
             }
+
+            printf("Loop 2 exit \n");
         }
     }
+
+    printf("Exit \n");
+
     free(buffer);
+
     return 0;
 }
