@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
     FILE *raw = fopen(argv[1], "r");
     FILE *current;
 
+    bool found = false;
+
     printf("File opened!\n");
 
     while (fread(buffer, 1, 512, raw) == 512)
@@ -52,11 +54,10 @@ int main(int argc, char *argv[])
 
             printf("Made file \n");
 
-            fwrite (buffer, 1, 512, current);
-            alreadyRead = true;
+            found = true;
             }
 
-            if(JPEG_counter > 0){
+            if(found){
                 printf("Wrote \n");
                 fwrite (buffer, 1, 512, current);
             }
