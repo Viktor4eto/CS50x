@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
 
             printf("Made file \n");
 
+            free(newFiles);
 
             fwrite (buffer, 1, 512, current);
 
