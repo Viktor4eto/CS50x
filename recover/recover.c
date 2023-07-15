@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
             }
 
             sprintf(newFiles, "%03i.jpg", JPEG_counter);
+
             JPEG_counter++;
 
             current = fopen(newFiles, "w");
