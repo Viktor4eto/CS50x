@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
+    char *newFiles;
     int JPEG_counter = 0;
 
 
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
         {
             printf("Image \n");
 
-            char *newFiles = malloc(3*sizeof(char));
+            newFiles = malloc(3*sizeof(char));
 
             if (newFiles == NULL)
             {
@@ -64,11 +65,13 @@ int main(int argc, char *argv[])
 
         }
 
-    //fwrite (buffer, 1, 512, current);
 
     printf("Exit \n");
 
+    free(newFiles);
     free(buffer);
+    fclose(current);
+    fclose(raw);
 
     return 0;
 }
