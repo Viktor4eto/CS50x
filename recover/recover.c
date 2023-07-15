@@ -28,8 +28,6 @@ int main(int argc, char *argv[])
 
     FILE *raw = fopen(argv[1], "r");
 
-
-
     printf("File opened!\n");
 
     while (fread(buffer, 1, 512, raw) == 512)
@@ -37,10 +35,9 @@ int main(int argc, char *argv[])
 
         printf("Enter \n");
 
-        if ((buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0))
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             printf("Image \n");
-            fclose(current);
 
             char *newFiles = malloc(3*sizeof(char));
 
@@ -60,16 +57,15 @@ int main(int argc, char *argv[])
 
             printf("Made file \n");
 
-            free(newFiles);
-
             fwrite (buffer, 1, 512, current);
 
             printf("Things \n");
 
             }
 
-            fwrite (buffer, 1, 512, current);
-
+            if(alreadyRead){
+                fwrite (buffer, 1, 512, current);
+            }
 
         }
 
