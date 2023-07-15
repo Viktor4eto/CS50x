@@ -14,15 +14,14 @@ int main(int argc, char *argv[])
     }
 
     BYTE *buffer = malloc(512 * (sizeof(BYTE)));
-    char *newFiles = malloc(7*sizeof(char));
+    char *newFiles = ;
     int JPEG_counter = 0;
 
 
-    if (buffer == NULL || newFiles == NULL)
+    if (buffer == NULL)
     {
         printf("malloc has failed \n");
         free(buffer);
-        free(newFiles);
         return 2;
     }
 
