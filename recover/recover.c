@@ -41,10 +41,17 @@ int main(int argc, char *argv[])
         {
             printf("Image \n");
 
-            string newFiles = NULL;
+            string newFiles = "";
             sprintf(newFiles, "%03i", JPEG_counter);
             JPEG_counter++;
+
+            printf("Not made file \n");
+
             FILE *current = fopen(filename, "w");
+
+            printf("Made file \n");
+
+
             fwrite (buffer, 1, 512, current);
 
             printf("Things \n");
