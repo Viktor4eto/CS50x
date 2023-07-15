@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     printf("File opened!\n");
 
-    while (!feof(raw))
+    while (fread(buffer, 1, 512, raw) == 512)
     {
         printf("Enter \n");
 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             printf("Things \n");
 
 
-            while (!new && !feof(raw))
+            while (!new && fread(buffer, 1, 512, raw) == 512)
             {
                 printf("Loop 2 enter \n");
 
