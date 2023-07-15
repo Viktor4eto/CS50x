@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
             printf("Image \n");
 
             string newFiles = "";
-            sprintf(newFiles, "%03i", JPEG_counter);
+            sprintf(newFiles, "%i", JPEG_counter);
             JPEG_counter++;
 
             printf("Not made file \n");
