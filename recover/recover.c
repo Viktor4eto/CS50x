@@ -35,10 +35,10 @@ int main(int argc, char *argv[])
         printf("Enter \n");
 
         new = false;
-        if(!alreadyRead)
-        {
-            fread(buffer, 1, 512, raw);
-        }
+        //if(!alreadyRead)
+        //{
+            //fread(buffer, 1, 512, raw);
+        //}
 
         printf("fread \n");
 
@@ -71,11 +71,11 @@ int main(int argc, char *argv[])
             printf("Things \n");
 
 
-            while (!new && fread(buffer, 1, 512, raw) == 512)
+            while (!new)
             {
                 printf("Loop 2 enter \n");
 
-                fread(buffer, 1, 512, raw);
+                //fread(buffer, 1, 512, raw);
 
                 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
                 {
