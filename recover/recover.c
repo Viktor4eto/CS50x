@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
             printf("Things \n");
 
 
-            while (!new)
+            while (!new && !feof(raw))
             {
                 printf("Loop 2 enter \n");
 
@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
                     new = true;
                     alreadyRead = true;
                     printf("Loop 2 exit \n");
+                    break;
                 }
 
                 else
