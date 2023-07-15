@@ -38,6 +38,9 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             //printf("Image \n");
+            if(found){
+                fclose(current);
+            }
 
             newFiles = malloc(3*sizeof(char));
 
@@ -52,7 +55,7 @@ int main(int argc, char *argv[])
             JPEG_counter++;
 
             current = fopen(newFiles, "w");
-
+            free(newFiles);
             //printf("Made file \n");
 
             found = true;
@@ -68,7 +71,6 @@ int main(int argc, char *argv[])
 
     printf("Exit \n");
 
-    free(newFiles);
     free(buffer);
     fclose(current);
     fclose(raw);
