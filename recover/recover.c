@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
                 return 3;
             }
 
-            sprintf(newFiles, "%03i", JPEG_counter);
+            sprintf(newFiles, "%03i.jpg", JPEG_counter);
             JPEG_counter++;
 
             printf("Not made file \n");
