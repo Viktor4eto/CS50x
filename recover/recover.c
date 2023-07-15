@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     printf("File opened!\n");
 
-    while (feof(raw) == 0)
+    while (!feof(raw))
     {
         printf("Enter \n");
 
