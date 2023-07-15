@@ -28,9 +28,11 @@ int main(int argc, char *argv[])
 
     FILE *raw = fopen(argv[1], "r");
 
+    fread(buffer, 1, 512, raw);
+
     printf("File opened!\n");
 
-    while (fread(buffer, 1, 512, raw) == 512)
+    while (true)
     {
         printf("Enter \n");
 
@@ -71,7 +73,7 @@ int main(int argc, char *argv[])
             {
                 printf("Loop 2 enter \n");
 
-                //fread(buffer, 1, 512, raw);
+                fread(buffer, 1, 512, raw);
 
                 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
                 {
