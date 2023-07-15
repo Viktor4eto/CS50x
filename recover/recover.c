@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
                 {
                     new = true;
                     alreadyRead = true;
-                    fseek()
+                    fseek(raw, -512, SEEK_CUR);
                     printf("Loop 2 exit \n");
                     break;
                 }
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
         }
     }
-    fwrite (buffer, 1, 512, current);
+    //fwrite (buffer, 1, 512, current);
 
     printf("Exit \n");
 
