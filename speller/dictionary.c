@@ -58,6 +58,19 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
-    return false;
+    for(int i = 0; i < N; i++){
+        freeList(table[i]);
+    }
+
+    return true;
+}
+
+void freeList(node* current){
+    if(current -> next == NULL){
+        free(current);
+    }
+
+    else{
+        freeList(current -> next);
+    }
 }
