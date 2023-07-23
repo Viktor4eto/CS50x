@@ -22,7 +22,14 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    int hashed = hash(word);
+
+    for (node *ptr = table[hashed]; ptr != NULL; ptr = ptr->next)
+    {
+        if(strcmp(ptr -> word, word)){
+            return true;
+        }
+    }
     return false;
 }
 
