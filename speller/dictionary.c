@@ -26,7 +26,7 @@ bool check(const char *word)
 
     for (node *ptr = table[hashed]; ptr != NULL; ptr = ptr->next)
     {
-        if(strcmp(ptr -> word, word)){
+        if(strcmp(ptr -> word, word) == 0){
             return true;
         }
     }
