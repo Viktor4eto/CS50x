@@ -57,16 +57,19 @@ bool load(const char *dictionary)
         return false;
     }
 
-    node *tmp = malloc(sizeof(node));
+    node *tmp;
 
-    if(tmp == NULL)
-    {
-        return false;
-    }
 
     while(fscanf(file, %s, word) != EOF)
     {
         hashed = hash(word);
+
+        tmp = malloc(sizeof(node));
+
+        if(tmp == NULL)
+        {
+            return false;
+        }
 
         strcopy(tmp -> word, word);
         tmp -> next = table[hashed];
