@@ -15,7 +15,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
-int words;
+int words = 0;
 
 // Hash table
 node *table[N];
@@ -77,6 +77,7 @@ bool load(const char *dictionary)
 
     }
 
+    fclose(file);
     return true;
 }
 
