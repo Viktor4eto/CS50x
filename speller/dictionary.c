@@ -76,7 +76,7 @@ bool load(const char *dictionary)
         strcpy(tmp -> word, s);
 
         if(table[hashed] == NULL)
-            tmp -> next = NULL:
+            tmp -> next = NULL;
         else
             tmp -> next = table[hashed];
 
