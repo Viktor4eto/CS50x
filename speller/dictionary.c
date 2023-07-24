@@ -91,6 +91,15 @@ unsigned int size(void)
     return words;
 }
 
+void freeList(node *current){
+    if(current -> next != NULL){
+        freeList(current -> next);
+    }
+
+    free(current);
+
+}
+
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
@@ -102,11 +111,3 @@ bool unload(void)
     return true;
 }
 
-void freeList(node *current){
-    if(current -> next != NULL){
-        freeList(current -> next);
-    }
-
-    free(current);
-
-}
