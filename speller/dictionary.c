@@ -73,7 +73,7 @@ bool load(const char *dictionary)
 
         strcopy(tmp -> word, word);
         tmp -> next = table[hashed];
-        table[hashed] -> next = tmp;
+        table[hashed] = tmp;
 
     }
 
