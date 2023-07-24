@@ -75,7 +75,7 @@ bool load(const char *dictionary)
             return false;
         }
 
-        strcopy(tmp -> word, word);
+        strcpy(tmp -> word, word);
         tmp -> next = table[hashed];
         table[hashed] = tmp;
 
