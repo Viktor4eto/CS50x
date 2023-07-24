@@ -50,10 +50,10 @@ unsigned int hash(const char *word)
     int hashed = 0;
     for(int i = 0; word[i] != '\0'; i++)
     {
-        hashed = hashed*13 + tolower(word[i]);
+        hashed = hashed + tolower(word[i]);
     }
     //printf("%i, \n", hashed);
-    return hashed % 1023;
+    return hashed % 1024;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
