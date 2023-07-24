@@ -53,7 +53,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
-    char *word;
+    char s[LENGTH + 1];
     int hashed;
 
     if(file == NULL)
@@ -64,9 +64,9 @@ bool load(const char *dictionary)
     node *tmp;
 
 
-    while(fscanf(file, "%s", word) != EOF)
+    while(fscanf(file, "%s", s) != EOF)
     {
-        hashed = hash(word);
+        hashed = hash(s);
 
         tmp = malloc(sizeof(node));
 
@@ -75,7 +75,7 @@ bool load(const char *dictionary)
             return false;
         }
 
-        strcpy(tmp -> word, word);
+        strcpy(tmp -> word, s);
         tmp -> next = table[hashed];
         table[hashed] = tmp;
 
