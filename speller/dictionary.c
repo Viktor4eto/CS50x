@@ -101,7 +101,7 @@ bool unload(void)
     return true;
 }
 
-void freeList(node* current){
+void freeList(node *current){
     if(current -> next == NULL){
         free(current);
     }
