@@ -31,7 +31,8 @@ bool check(const char *word)
 
     for (node *ptr = table[hashed]; ptr != NULL; ptr = ptr->next)
     {
-        if(strcasecmp(ptr -> word, word) == 0){
+        if (strcasecmp(ptr -> word, word) == 0)
+        {
             return true;
         }
     }
@@ -48,7 +49,7 @@ unsigned int hash(const char *word)
     }*/
 
     int hashed = 0;
-    for(int i = 0; word[i] != '\0'; i++)
+    for (int i = 0; word[i] != '\0'; i++)
     {
         hashed = hashed + tolower(word[i]);
     }
@@ -63,7 +64,7 @@ bool load(const char *dictionary)
     char s[LENGTH + 1];
     int hashed;
 
-    if(file == NULL)
+    if (file == NULL)
     {
         return false;
     }
@@ -71,23 +72,27 @@ bool load(const char *dictionary)
     node *tmp;
 
 
-    while(fscanf(file, "%s", s) != EOF)
+    while (fscanf(file, "%s", s) != EOF)
     {
         hashed = hash(s);
 
         tmp = malloc(sizeof(node));
 
-        if(tmp == NULL)
+        if (tmp == NULL)
         {
             return false;
         }
 
         strcpy(tmp -> word, s);
 
-        if(table[hashed] == NULL)
+        if (table[hashed] == NULL)
+        {
             tmp -> next = NULL;
+        }
         else
+        {
             tmp -> next = table[hashed];
+        }
 
         table[hashed] = tmp;
         words++;
@@ -103,8 +108,10 @@ unsigned int size(void)
     return words;
 }
 
-void freeList(node *current){
-    if(current -> next != NULL){
+void freeList(node *current)
+{
+    if (current -> next != NULL)
+    {
         freeList(current -> next);
     }
 
@@ -115,9 +122,12 @@ void freeList(node *current){
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for(int i = 0; i < N; i++){
-        if(table[i] != NULL)
+    for (int i = 0; i < N; i++)
+    {
+        if (table[i] != NULL)
+        {
             freeList(table[i]);
+        }
     }
 
     return true;
