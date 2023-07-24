@@ -18,7 +18,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N =50;
+const unsigned int N = 26;
 int words = 0;
 
 // Hash table
@@ -41,13 +41,13 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    //int hashed = toupper(word[0]) - 'A';
-    int hashed = 0;
+    int hashed = toupper(word[0]) - 'A';
+    /*int hashed = 0;
     for(int i = 0; i < sizeof(word); i++){
         hashed += toupper(word[i]);
-    }
+    }*/
 
-    return hashed%50;
+    return hashed;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
