@@ -95,7 +95,8 @@ unsigned int size(void)
 bool unload(void)
 {
     for(int i = 0; i < N; i++){
-        freeList(table[i]);
+        if(table[i] != NULL)
+            freeList(table[i]);
     }
 
     return true;
