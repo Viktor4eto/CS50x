@@ -102,12 +102,10 @@ bool unload(void)
 }
 
 void freeList(node *current){
-    if(current -> next == NULL){
-        free(current);
+    if(current -> next != NULL){
+        freeList(current -> next);
     }
 
-    else{
-        freeList(current -> next);
-        free(current);
-    }
+    free(current);
+
 }
