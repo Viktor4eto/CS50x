@@ -37,7 +37,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int hashed;
+    //int hashed;
 
 
 
@@ -75,9 +75,9 @@ bool load(const char *dictionary)
         tmp -> next = table[hashed];
         table[hashed] -> next = tmp;
 
-
     }
-    return false;
+
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
