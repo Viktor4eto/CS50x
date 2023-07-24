@@ -44,8 +44,6 @@ unsigned int hash(const char *word)
     int hashed = toupper(word[0]) - 'A';
 
 
-
-    words++;
     return hashed;
 }
 
@@ -76,9 +74,14 @@ bool load(const char *dictionary)
         }
 
         strcpy(tmp -> word, s);
-        tmp -> next = table[hashed];
-        table[hashed] = tmp;
 
+        if(table[hashed] == NULL)
+            tmp -> next = NULL:
+        else
+            tmp -> next = table[hashed];
+
+        table[hashed] = tmp;
+        words++;
     }
 
     fclose(file);
