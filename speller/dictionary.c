@@ -44,7 +44,7 @@ unsigned int hash(const char *word)
     //int hashed = toupper(word[0]) - 'A';
     int hashed = 0;
     for(int i = 0; i < sizeof(word); i++){
-        hashed += word[i];
+        hashed += toupper(word[i]);
     }
 
     return hashed%50;
