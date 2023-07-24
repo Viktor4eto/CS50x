@@ -18,7 +18,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 2147483647;
+const unsigned int N = 4294967295;
 int words = 0;
 
 // Hash table
@@ -53,7 +53,7 @@ unsigned int hash(const char *word)
         hashed = 31*hashed + tolower(word[i]);
     }
     printf("%i, \n", hashed);
-    return hashed;
+    return hashed + 2147483647;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
