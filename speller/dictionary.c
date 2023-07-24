@@ -57,22 +57,21 @@ bool load(const char *dictionary)
         return false;
     }
 
+    node *tmp = malloc(sizeof(node));
 
+    if(tmp == NULL)
+    {
+        return false;
+    }
 
     while(fscanf(file, %s, word) != EOF)
     {
         hashed = hash(word);
-        table[hash] = malloc(sizeof(node));
 
-        if(table[hash] == NULL)
-        {
-            return false;
-        }
+        strcopy(tmp -> word, word);
+        tmp -> next = table[hashed];
+        table[hashed] -> next = tmp;
 
-        strcopy(table[hash] -> word, word);
-        tmp -> next = NULL;
-
-        insert();
 
     }
     return false;
@@ -103,8 +102,4 @@ void freeList(node* current){
         freeList(current -> next);
         free(current);
     }
-}
-
-void insert(node *n, int hash){
-
 }
