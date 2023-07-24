@@ -49,8 +49,13 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     FILE *file = fopen(dictionary, "r");
+    char *word;
 
-    
+    if(file == NULL){
+        return false;
+    }
+
+    while(fscanf(file, %s, word) != EOF)
     return false;
 }
 
