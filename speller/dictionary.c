@@ -41,11 +41,13 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int hashed = toupper(word[0]) - 'A';
+    //return toupper(word[0]) - 'A';
     /*int hashed = 0;
     for(int i = 0; i < sizeof(word); i++){
         hashed += toupper(word[i]);
     }*/
+
+    int hashed = 0; 
 
     return hashed;
 }
