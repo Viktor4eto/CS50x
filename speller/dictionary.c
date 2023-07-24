@@ -52,8 +52,8 @@ unsigned int hash(const char *word)
     {
         hashed = 31*hashed + tolower(word[i]);
     }
-    printf("%i, \n", hashed);
-    return hashed + 2147483647;
+    //printf("%i, \n", hashed);
+    return hashed;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
