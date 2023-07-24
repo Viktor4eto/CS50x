@@ -48,7 +48,7 @@ unsigned int hash(const char *word)
     }*/
 
     int hashed = 0;
-    for(int i = 0; i < sizeof(word); i++)
+    for(int i = 0; word[i] != "\0"; i++)
     {
         hashed += toupper(word[i]);
     }
