@@ -64,7 +64,7 @@ bool load(const char *dictionary)
     node *tmp;
 
 
-    while(fscanf(file, %s, word) != EOF)
+    while(fscanf(file, "%s", word) != EOF)
     {
         hashed = hash(word);
 
