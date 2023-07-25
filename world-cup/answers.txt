@@ -1,15 +1,19 @@
 Times:
 
-10 simulations: TODO (record time using 0m0.000s format)
-100 simulations: TODO (record time using 0m0.000s format)
-1000 simulations: TODO (record time using 0m0.000s format)
-10000 simulations: TODO (record time using 0m0.000s format)
-100000 simulations: TODO (record time using 0m0.000s format)
-1000000 simulations: TODO (record time using 0m0.000s format)
+10 simulations: 0m0.026s
+100 simulations: 0m0.030s
+1000 simulations: 0m0.034s
+10000 simulations: 0m0.096s
+100000 simulations: 0m0.772s
+1000000 simulations: 0m7.707s
 
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?: TODO
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
+Small number of simulations gave the closest and biggest percentile, which is problematic as there are too little simulations. By increasing the simulations, Belgium and Brazil became closer in probability of winningat ~21% which occurred from 100 simulations and above.
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?: TODO
+After how many simulations would you call the predictions "good enough"?:
+
+I think that 10000 is the best for this simulation. It takes very little time and gives results that are really close to those of the one million and one hundred thousand, but for time closer to 1000. 
