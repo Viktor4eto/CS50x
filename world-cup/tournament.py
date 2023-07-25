@@ -27,7 +27,8 @@ def main():
             row["rating"] = int(row["rating"])
             teams.append(row)
     for i in range(N):
-        simulate_tournament(teams)
+        winner = simulate_tournament(teams)
+        if 
 
 
 
@@ -62,7 +63,6 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     if len(teams) == 1:
-        print(teams[0])
         return teams[0]
 
     simulate_tournament(simulate_round(teams))
