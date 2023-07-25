@@ -25,6 +25,7 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             teams.append(row)
+            teams
 
     simulate_tournament(teams)
 
