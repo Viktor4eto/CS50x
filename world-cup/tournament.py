@@ -29,7 +29,7 @@ def main():
     for i in range(N):
         winner = simulate_tournament(teams)
         print(winner)
-        
+
         if winner in counts:
             counts[winner] += 1
         else:
