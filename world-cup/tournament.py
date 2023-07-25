@@ -30,7 +30,7 @@ def main():
         print(simulate_tournament(teams))
         #print(winner)
 
-       # if winner in counts:
+        #if winner in counts:
             #counts[winner] += 1
         #else:
             #counts[winner] =  int("1")
