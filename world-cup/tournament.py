@@ -28,7 +28,13 @@ def main():
             teams.append(row)
     for i in range(N):
         winner = simulate_tournament(teams)
-        if 
+
+        if winner in counts:
+            counts[winner] += 1
+        else:
+            counts[winner] =  int(1)
+
+    print(counts)
 
 
 
