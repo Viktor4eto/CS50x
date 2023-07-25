@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 10
+N = 1000
 
 
 def main():
@@ -27,15 +27,15 @@ def main():
             row["rating"] = int(row["rating"])
             teams.append(row)
     for i in range(N):
-        print(simulate_tournament(teams))
+        winner = simulate_tournament(teams)
         #print(winner)
 
-        #if winner in counts:
-            #counts[winner] += 1
-        #else:
-            #counts[winner] =  int("1")
+        if winner in counts:
+            counts[winner] += 1
+        else:
+            counts[winner] =  int("1")
 
-    print(counts)
+    #print(counts)
 
 
 
@@ -73,7 +73,7 @@ def simulate_tournament(teams):
         #print(teams[0]["team"])
         return teams[0]["team"]
 
-    simulate_tournament(simulate_round(teams))
+    return simulate_tournament(simulate_round(teams))
 
 
 if __name__ == "__main__":
