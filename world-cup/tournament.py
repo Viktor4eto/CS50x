@@ -14,11 +14,15 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
+    filename = sys.argc[1]
     teams = []
     # TODO: Read teams into memory from file
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+
+    with open(filename) as file:
+        reader = csv.DictReader(file)
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
