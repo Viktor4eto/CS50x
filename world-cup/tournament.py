@@ -26,7 +26,7 @@ def main():
         for row in reader:
             teams.append(row)
 
-    print(teams)
+
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -58,6 +58,10 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
+    if len(teams) == 1:
+        return teams[0]
+
+    simulate_tournament(simulate_round(teams))
 
 
 if __name__ == "__main__":
