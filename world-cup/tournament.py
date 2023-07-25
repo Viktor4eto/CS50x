@@ -27,13 +27,13 @@ def main():
             row["rating"] = int(row["rating"])
             teams.append(row)
     for i in range(N):
-        winner = simulate_tournament(teams)
-        print(winner)
+        print(simulate_tournament(teams))
+        #print(winner)
 
-        if winner in counts:
-            counts[winner] += 1
-        else:
-            counts[winner] =  int("1")
+       # if winner in counts:
+            #counts[winner] += 1
+        #else:
+            #counts[winner] =  int("1")
 
     print(counts)
 
@@ -70,7 +70,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     if len(teams) == 1:
-        print(teams[0]["team"])
+        #print(teams[0]["team"])
         return teams[0]["team"]
 
     simulate_tournament(simulate_round(teams))
