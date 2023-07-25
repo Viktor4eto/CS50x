@@ -26,6 +26,7 @@ def main():
         for row in reader:
             teams.append(row)
 
+    simulate_tournament(teams)
 
 
     # Print each team's chances of winning, according to simulation
@@ -59,6 +60,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     if len(teams) == 1:
+        print(teams[0])
         return teams[0]
 
     simulate_tournament(simulate_round(teams))
