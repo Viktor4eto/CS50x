@@ -46,9 +46,10 @@ def main():
         elif card // 10**12 == 4 or card // 10**15 == 4:
             print('VISA')
         else:
+            print('Legit works')
             print('INVALID')
     else:
-        print()
+        print('Here')
         print('INVALID')
 
 
