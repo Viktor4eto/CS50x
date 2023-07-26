@@ -1,6 +1,7 @@
 
 
 def main():
-    card = input('Number: ')
+    card = int(input('Number: '))
 
-    if()
+    if legit(card):
+        if 
