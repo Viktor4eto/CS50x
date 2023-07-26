@@ -11,6 +11,13 @@ def main():
         testVals[2] = math.floor(card / 10**12)
         testVals[3] = math.floor(card / 10**15)
 
-        if 34 in testVals or 37 in testVals:
+        if set([34, 37]).intersection(testVals):
             print('AMEX')
-        else if 51 in testVals or 
+        elif set([51, 52, 53, 54, 55]).intersection(testVals):
+            print('MASTERCARD')
+        elif 4 in testVals:
+            print('VISA)
+        else:
+            print('INVALID')
+    else:
+        print('INVALID')
