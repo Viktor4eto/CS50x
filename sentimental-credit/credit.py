@@ -21,13 +21,13 @@ def legit(card):
             digit = card % 10
 
             if digit >= 5:
-                digit *= 2
-                sum += digit%10 + digit/10
+                sum += digit*2%10 + digit/10
             else:
                 sum += digit*2
 
-        card //= 10
-        check = False;
+            card //= 10
+
+        check = False
         print(f'{sum} and {card}')
 
     return sum % 10 == 0
