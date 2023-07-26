@@ -18,12 +18,13 @@ def legit(card):
             check = True
             card //= 10
         else:
-            digit = card % 10
+            #digit = (card % 10)
 
             if digit >= 5:
-                sum += digit*2%10 + digit/10
+                #digit *= 2
+                sum += (card % 10)*2%10 + digit//10
             else:
-                sum += digit*2
+                sum += (card % 10)*2
 
             card //= 10
 
