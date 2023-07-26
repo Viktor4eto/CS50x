@@ -1,6 +1,8 @@
 import math
 
 # Finds if the card is real
+
+
 def legit(card):
     check = False
     sum = 0
@@ -16,7 +18,7 @@ def legit(card):
             digit = (card % 10)
 
             if digit >= 5:
-                double_digit  = digit * 2
+                double_digit = digit * 2
                 sum += double_digit % 10 + double_digit // 10
             else:
                 sum += digit*2
@@ -25,7 +27,7 @@ def legit(card):
 
         # Decrements card
         card //= 10
-        #print(f'{sum} and {card} and {check}')
+        # print(f'{sum} and {card} and {check}')
 
     return sum % 10 == 0
 
