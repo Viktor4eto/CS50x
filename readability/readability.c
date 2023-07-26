@@ -16,12 +16,16 @@ int main(void)
     float letters = count_letters(text);
     float words = count_words(text);
     float sentences = count_sentences(text);
-    printf("%f %f %f \n", letters, words, sentences);
+
+    //printf("%f %f %f \n", letters, words, sentences);
+
     float L = letters / words;
     float S = sentences / words;
     //Formula
     float index = 0.0588 * L * 100 - 0.296 * S * 100 - 15.8;
-    printf("%f \n", index);
+
+    //printf("%f \n", index);
+    
     //Grade logic
     if (index < 1)
     {

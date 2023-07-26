@@ -1,14 +1,19 @@
 # TODO
 
+# The main function that initializes every variable
 def main():
     text = input('Text: ')
     letters, words, sentences = analyze(text)
-    print(f'{letters} {words} {sentences}')
+
+    # print(f'{letters} {words} {sentences}')
+    # Prepares the L and S values
     L = letters / words
     S = sentences / words
 
+    # Calculation of the index
     index = 0.0588 * L * 100 - 0.296 * S * 100 - 15.8
 
+    # Logic for the grades
     if index < 1:
         print('Before Grade 1')
     elif index > 16:
@@ -18,6 +23,7 @@ def main():
         print(f'Grade {round(index)}')
 
 
+# Goes throught the given text and returns the number of letters, words and sentences in this order
 def analyze(text):
     letters_count = 0
     words_count = 1
@@ -33,5 +39,6 @@ def analyze(text):
 
     return letters_count, words_count, sentences_count
 
+
 if __name__ == '__main__':
-        main()
+    main()
