@@ -11,4 +11,6 @@ def main():
         testVals[2] = math.floor(card / 10**12)
         testVals[3] = math.floor(card / 10**15)
 
-        if 
+        if 34 in testVals or 37 in testVals:
+            print('AMEX')
+        else if 51 in testVals or 
