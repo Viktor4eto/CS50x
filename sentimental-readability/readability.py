@@ -13,6 +13,7 @@ def main():
     elif index > 16:
         print('Grade 16+')
     else:
+        print(f'{index}')
         print(f'Grade {round(index)}')
 
 
