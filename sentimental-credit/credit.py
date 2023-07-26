@@ -13,7 +13,7 @@ def legit(card):
     check = False
     sum = 0
 
-    while card > 10:
+    while card > 0:
         if not check:
             sum += card % 10
             check = True
