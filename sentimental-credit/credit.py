@@ -5,7 +5,6 @@ def len(card):
     while card > 10:
         count += 1
         card //= 10
-
     return count
 
 
