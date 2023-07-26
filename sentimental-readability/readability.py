@@ -31,3 +31,5 @@ def analyze(text):
 
     return letters_count, words_count, sentences_count
 
+if __name__ == '__main__':
+        main()
