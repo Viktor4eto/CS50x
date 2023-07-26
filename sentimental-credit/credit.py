@@ -1,5 +1,6 @@
 import math
 
+# Finds the length of the card number
 def len(card):
     count = 1
     while card > 10:
@@ -12,7 +13,7 @@ def legit(card):
     check = False
     sum = 0
 
-    for i in range(len(card)):
+    while card > 10:
         if not check:
             sum += card % 10
             check = True
@@ -28,7 +29,7 @@ def legit(card):
 
             card //= 10
             check = False
-            
+
         print(f'{sum} and {card} and {check}')
 
     return sum % 10 == 0
