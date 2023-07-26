@@ -29,7 +29,7 @@ def legit(card):
 
         card //= 10
         check = False;
-        print(sum)
+        #print(sum)
 
     return sum % 10 == 0
 
@@ -48,6 +48,7 @@ def main():
         else:
             print('INVALID')
     else:
+        print()
         print('INVALID')
 
 
