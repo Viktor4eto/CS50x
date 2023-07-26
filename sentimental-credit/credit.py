@@ -13,7 +13,7 @@ def legit(card):
     check = False
     sum = 0
 
-    for i in range(len(card))
+    for i in range(len(card)):
         if not check:
             sum += card % 10
             check = True
@@ -22,8 +22,16 @@ def legit(card):
             digit = card % 10
 
             if digit >= 5:
-                sum 
+                digit *= 2
+                sum += digit%10 + digit/10
+            else:
+                sum += digit*2
 
+        card //= 10
+        check = False;
+        print(sum)
+
+    return sum % 10 == 0
 
 
 def main():
@@ -36,8 +44,12 @@ def main():
         elif card // 10**14 in (51, 52, 53, 54, 55):
             print('MASTERCARD')
         elif card // 10**12 == 4 or card // 10**15 == 4:
-            print('VISA)
+            print('VISA')
         else:
             print('INVALID')
     else:
         print('INVALID')
+
+
+#if __name__ == '__name__':
+main()
