@@ -49,7 +49,7 @@ bool legit(long long n)
             n = n / 10;
             is = false;
         }
-        printf("%i and %lld %d \n", sum, n);
+        printf("%i and %lld %d \n", sum, n, is);
     }
     //What should be returned?
     if (sum % 10 == 0)
