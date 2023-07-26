@@ -27,8 +27,8 @@ def legit(card):
                 sum += digit*2
 
             card //= 10
-
-        check = False
+            check = False
+            
         print(f'{sum} and {card} and {check}')
 
     return sum % 10 == 0
