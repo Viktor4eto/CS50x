@@ -1,7 +1,29 @@
 import math
 
+def len(card):
+    count = 1
+    while card > 10:
+        count += 1
+        card //= 10
+
+    return count
+
+
 def legit(card):
-    
+    check = False
+    sum = 0
+
+    for i in range(len(card))
+        if not check:
+            sum += card % 10
+            check = True
+            card //= 10
+        else:
+            digit = card % 10
+
+            if digit >= 5:
+                sum 
+
 
 
 def main():
