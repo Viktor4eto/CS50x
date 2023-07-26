@@ -1,23 +1,17 @@
 import math
 
-# Finds the length of the card number
-def len(card):
-    count = 1
-    while card > 10:
-        count += 1
-        card //= 10
-    return count
-
-
+# Finds if the card is real
 def legit(card):
     check = False
     sum = 0
 
+    # While-Loop for the length of the card number that gives the sum of the digits
     while card > 0:
+        # Uses chekc to determine which operation to add to sum
         if not check:
             sum += card % 10
             check = True
-            card //= 10
+
         else:
             digit = (card % 10)
 
@@ -27,10 +21,11 @@ def legit(card):
             else:
                 sum += digit*2
 
-            card //= 10
             check = False
 
-        print(f'{sum} and {card} and {check}')
+        # Decrements card
+        card //= 10
+        #print(f'{sum} and {card} and {check}')
 
     return sum % 10 == 0
 
@@ -38,7 +33,7 @@ def legit(card):
 def main():
     card = int(input('Number: '))
 
-
+    # If the car is real. it checks the possible combinations
     if legit(card):
         if card // 10**13 in (34, 37):
             print('AMEX')
@@ -54,5 +49,5 @@ def main():
         print('INVALID')
 
 
-#if __name__ == '__name__':
-main()
+if __name__ == '__main__':
+    main()
