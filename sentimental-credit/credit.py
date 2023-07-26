@@ -1,21 +1,19 @@
 import math
 
+def legit(card):
+    
+
+
 def main():
     card = int(input('Number: '))
 
 
     if legit(card):
-        testVals = []
-        testVals[0] = math.floor(card / 10**13)
-        testVals[1] = math.floor(card / 10**14)
-        testVals[2] = math.floor(card / 10**12)
-        testVals[3] = math.floor(card / 10**15)
-
-        if set([34, 37]).intersection(testVals):
+        if card // 10**13 in (34, 37):
             print('AMEX')
-        elif set([51, 52, 53, 54, 55]).intersection(testVals):
+        elif card // 10**14 in (51, 52, 53, 54, 55):
             print('MASTERCARD')
-        elif 4 in testVals:
+        elif card // 10**12 == 4 or card // 10**15 == 4:
             print('VISA)
         else:
             print('INVALID')
