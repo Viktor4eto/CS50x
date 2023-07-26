@@ -13,7 +13,7 @@ def main():
     elif index > 16:
         print('Grade 16+')
     else:
-        print('Grade ' + round(index))
+        print(f'Grade {round(index)}')
 
 
 def analyze(text):
