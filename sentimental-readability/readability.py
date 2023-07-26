@@ -3,6 +3,7 @@
 def main():
     text = input('Text: ')
     letters, words, sentences = analyze(text)
+    print(f'{letters} {words} {sentences}')
     L = letters / words
     S = sentences / words
 
@@ -19,7 +20,7 @@ def main():
 
 def analyze(text):
     letters_count = 0
-    words_count = 0
+    words_count = 1
     sentences_count = 0
 
     for i in range(len(text)):
