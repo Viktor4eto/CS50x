@@ -35,12 +35,16 @@ def main():
         longest[i] = longest_match(sequence, i)
 
     print(longest)
+    print()
     #for i in range(1, database[0]):
         #longest_of_each[name] = longest_match(sequence, database[0])
 
     # TODO: Check database for matching profiles
     for i in range(len(database)):
         longest['name'] = database[i]['name']
+        print(longest)
+        print(database[i])
+        print(database[i] == longest)
         if database[i] == longest:
             person = longest['name']
 
