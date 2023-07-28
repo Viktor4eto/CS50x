@@ -39,13 +39,15 @@ def main():
         #longest_of_each[name] = longest_match(sequence, database[0])
 
     # TODO: Check database for matching profiles
-    for i in database:
+    for i in range(len(database)):
         longest['name'] = database[i]['name']
         if database[i] == longest:
             person = longest['name']
 
-    print(person)
-    print('No Match')
+    try:
+        print(person)
+    except UnboundLocalError:
+        print('No Match')
 
     return
 
