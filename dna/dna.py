@@ -23,11 +23,11 @@ def main():
     print(database)
 
     for i in database:
-        for name in database[i]:
+        for name in i:
             try:
-                database[i][name] = int(database[i][name])
-            except TypeError:
-                print()
+                i[name] = int(i[name])
+            except ValueError:
+                
     # TODO: Read DNA sequence file into a variable
 
     with open(sequence_file) as file:
