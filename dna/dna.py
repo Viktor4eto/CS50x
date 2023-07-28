@@ -40,8 +40,12 @@ def main():
 
     # TODO: Check database for matching profiles
     for i in database:
-        longest
-        if set(database[i].values()) == set(longest)
+        longest['name'] = database[i]['name']
+        if database[i] == longest:
+            person = longest['name']
+
+    print(person)
+    print('No Match')
 
     return
 
