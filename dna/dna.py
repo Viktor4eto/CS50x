@@ -25,7 +25,7 @@ def main():
     # TODO: Read DNA sequence file into a variable
 
     with open(sequence_file) as file:
-        sequence = read(file)
+        sequence = file.read()
 
     print(sequence)
 
