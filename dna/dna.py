@@ -9,7 +9,12 @@ def main():
         print('Usage: python dna.py data.csv sequence.txt')
         sys.exit()
 
+    data_file = argv[1]
+    sequence_file = argv[2]
+
     # TODO: Read database file into a variable
+    reader = cvs.DictReader()
+
 
     # TODO: Read DNA sequence file into a variable
 
