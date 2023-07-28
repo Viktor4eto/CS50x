@@ -22,6 +22,12 @@ def main():
 
     print(database)
 
+    for i in database:
+        for name in database[i]:
+            try:
+                database[i][name] = int(database[i][name])
+            except TypeError:
+                print()
     # TODO: Read DNA sequence file into a variable
 
     with open(sequence_file) as file:
