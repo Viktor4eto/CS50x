@@ -28,10 +28,13 @@ def main():
         sequence = file.read()
 
     print(sequence)
-
+    longest = {}
     # print(len(database[0]))
     # TODO: Find longest match of each STR in DNA sequence
-    print(database[0]['name'])
+    for i in database[0]:
+        longest[i] = longest_match(sequence, i)
+
+    print(longest)
     #for i in range(1, database[0]):
         #longest_of_each[name] = longest_match(sequence, database[0])
 
