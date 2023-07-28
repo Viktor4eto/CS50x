@@ -20,7 +20,7 @@ def main():
         for row in reader:
             database.append(row)
 
-    print(database)
+    # print(database)
 
     for i in database:
         for name in i:
@@ -34,24 +34,24 @@ def main():
     with open(sequence_file) as file:
         sequence = file.read()
 
-    print(sequence)
+    # print(sequence)
     longest = {}
     # print(len(database[0]))
     # TODO: Find longest match of each STR in DNA sequence
     for i in database[0]:
         longest[i] = longest_match(sequence, i)
 
-    print(longest)
-    print()
-    #for i in range(1, database[0]):
-        #longest_of_each[name] = longest_match(sequence, database[0])
+    # print(longest)
+    # print()
+    # for i in range(1, database[0]):
+        # longest_of_each[name] = longest_match(sequence, database[0])
 
     # TODO: Check database for matching profiles
     for dictionary in database:
         longest['name'] = dictionary['name']
-        print(longest)
-        print(dictionary)
-        print(dictionary == longest)
+        # print(longest)
+        # print(dictionary)
+        # print(dictionary == longest)
         if dictionary == longest:
             person = longest['name']
 
