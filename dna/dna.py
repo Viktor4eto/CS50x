@@ -27,7 +27,8 @@ def main():
             try:
                 i[name] = int(i[name])
             except ValueError:
-                
+                pass
+
     # TODO: Read DNA sequence file into a variable
 
     with open(sequence_file) as file:
@@ -46,12 +47,12 @@ def main():
         #longest_of_each[name] = longest_match(sequence, database[0])
 
     # TODO: Check database for matching profiles
-    for i in range(len(database)):
-        longest['name'] = database[i]['name']
+    for dictionary in database:
+        longest['name'] = dictionary['name']
         print(longest)
-        print(database[i])
-        print(database[i] == longest)
-        if database[i] == longest:
+        print(dictionary)
+        print(dictionary == longest)
+        if dictionary == longest:
             person = longest['name']
 
     try:
