@@ -11,11 +11,13 @@ def main():
 
     data_file = argv[1]
     sequence_file = argv[2]
-
+    database = {}
     # TODO: Read database file into a variable
-    reader = cvs.DictReader()
+
     with open(data_file) as data:
-        for row in reader
+        reader = cvs.DictReader(file)
+        for row in reader:
+            database.
 
 
     # TODO: Read DNA sequence file into a variable
