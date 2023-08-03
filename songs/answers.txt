@@ -1,1 +1,2 @@
-1. This user likes songs with high danceability and energy with a valence of below 0.5. 
+1. This user likes songs with high danceability and energy with a valence of below 0.5.
+2. I would propose an algorythm that looks at their most listened and liked artists. Then compute the artist's style and normalize this value to the other most listened to artists.
