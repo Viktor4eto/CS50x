@@ -48,3 +48,7 @@ SELECT * FROM airports JOIN flights ON flights.origin_airport_id = airports.id W
 -- Gives the city the thief escaped to: New York City (LGA - LaGuardia Airport)
 SELECT * FROM airports JOIN flights ON flights.destination_airport_id = airports.id WHERE flights.id = (SELECT id FROM flights WHERE year
  = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1);
+
+-- Gives a list of passport numbers that can belong to the thief
+ SELECT passport_number FROM passengers WHERE flight_id = (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY ho
+ur LIMIT 1);
