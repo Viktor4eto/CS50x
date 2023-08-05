@@ -28,3 +28,8 @@ SELECT name, transcript  FROM interviews WHERE year = 2021 AND month = 7 AND day
 -- Relevant license plates after interviews
 SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute < 25 AND activity =
 'exit';
+
+SELECT * FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+
+-- Table with callers and receivers around that time that lasted less than a minute
+SELECT caller, receiver  FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
