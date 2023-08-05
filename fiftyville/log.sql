@@ -15,3 +15,5 @@ SELECT * FROM crime_scene_reports WHERE year = 2021 AND month = 7 AND day = 28 A
 SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
 
 sqlite> SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10;
+
+SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 ORDER BY minute;
