@@ -37,3 +37,6 @@ SELECT caller, receiver  FROM phone_calls WHERE year = 2021 AND month = 7 AND da
 -- Gives the flight the theif wants to take
 SELECT * FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1;
 
+-- 
+SELECT * FROM airports JOIN flights ON flights.origin_airport_id = airports.id WHERE flights.id = (SELECT id FROM flights WHERE year = 20
+21 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1);
