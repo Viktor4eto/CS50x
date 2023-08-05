@@ -3,3 +3,4 @@
 
 SELECT * FROM crime_scene_reports;
 
+.schema crime_scene_reports
