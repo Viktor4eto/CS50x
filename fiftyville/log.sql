@@ -19,3 +19,6 @@ SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 
 SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 ORDER BY minute;
 
 SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10;
+
+-- Relevant license plates
+SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute < 30;
