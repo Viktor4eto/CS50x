@@ -55,3 +55,9 @@ ur LIMIT 1);
 
 -- Gives 3 potential suspects: Sofia, Bruce and Kelsey
 SELECT * FROM people JOIN (SELECT passport_number AS passport FROM passengers WHERE flight_id = (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour LIMIT 1)), (SELECT license_plate AS license FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute < 25 AND activity = 'exit'), (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60) ON people.phone_number = caller AND people.passport_number = passport AND people.license_plate = license;
+
+-- Gives all account numbers that withdrew money on that date
+SELECT * FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+
+-- Gives the account numbers from the previous
+SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
