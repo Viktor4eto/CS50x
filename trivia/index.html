@@ -30,6 +30,7 @@
                 let open = document.querySelector("form");
                 open.addEventListener("submit", function(){
                     let ans = document.getElementById("submit");
+                    console.log(ans);
                     if(ans.value == "Octagon"){
                         open.style.backgroundColor = 'green';
                         document.getElementById("check").innerHTML = "Correct!";
