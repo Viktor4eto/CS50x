@@ -8,12 +8,12 @@
         <script>
             document.addEventListener('DOMContentLoaded', function(){
                 let buttons = document.querySelectorAll('button');
-                buttons.addEventListener('click', function change(id){
-                    if(id == 'correct'){
-                        document.getElementById('correct').backgroundColor = 'green';
+                buttons.addEventListener('click', function(name){
+                    if(name == 'ans-2'){
+                        document.getElementById(name).style.backgroundColor = 'green';
                     }
                     else{
-                        document.getElementById('incorrect').backgroundColor = 'red';
+                        document.getElementById(name).style.backgroundColor = 'red';
                     }
                 });
             });
@@ -32,16 +32,16 @@
                 <h3>
                     What book holds the record for the fastest selling book in history?
                 </h3>
-                <button type="button" id="incorrect" onclick="change(id);">
+                <button type="button" id="ans-1" name="incorrect">
                     "Harry Potter and the Deathly Hallows"
                 </button>
-                <button type="button" id="correct">
+                <button type="button" id="ans-2" name="correct">
                     "Don Quixote"
                 </button>
-                <button  type="button" id="incorrect">
+                <button  type="button" id="ans-3" name="incorrect">
                     "The Hobbit"
                 </button>
-                <button type="button" id="incorrect">
+                <button type="button" id="ans-4" name="incorrect">
                     "The Da Vinci Code"
                 </button>
                 <p></p>
