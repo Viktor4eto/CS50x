@@ -14,8 +14,7 @@
                         var name = event.target.id;
                         console.log(name);
                         if(name == 'ans-2'){
-                            var element = document.createElement("p")
-                            element.textContent = event.target.name;
+                            document.write(document.createElement("p").textContent = event.target.name);
                             document.getElementById(name).style.backgroundColor = 'green';
 
 
