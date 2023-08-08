@@ -13,9 +13,9 @@
                     button.addEventListener("click", function(){
                         var name = event.target.id;
                         console.log(name);
-                        if(name == 'correct'){
+                        if(name == 'ans-2'){
                             document.getElementById(name).style.backgroundColor = 'green';
-                            //document.createElement("p").textContent = name.charAt(0).toUpperCase() + name.slice(1);
+                            document.createElement("p").textContent = event.target.name;
 
                         }
                         else{
@@ -40,16 +40,16 @@
                 <h3>
                     What book holds the record for the fastest selling book in history?
                 </h3>
-                <button type="button" id="ans-1" name="incorrect">
+                <button type="button" id="ans-1" name="Incorrect">
                     "Harry Potter and the Deathly Hallows"
                 </button>
-                <button type="button" name="correct">
+                <button type="button" id="ans-2" name="Correct">
                     "Don Quixote"
                 </button>
-                <button  type="button" id="incorrect">
+                <button  type="button" id="ans-3" name="Incorrect">
                     "The Hobbit"
                 </button>
-                <button type="button" id="incorrect">
+                <button type="button" id="ans-4" name="Incorrect">
                     "The Da Vinci Code"
                 </button>
             </div>
