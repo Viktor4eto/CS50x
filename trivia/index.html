@@ -8,19 +8,22 @@
         <script>
 
             document.addEventListener("DOMContentLoaded", function(){
+                let answered = false;
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(){
-                        var name = event.target.id;
-                        console.log(name);
-                        if(name == 'ans-2'){
-                            document.getElementById('p');
-                            document.getElementById(name).style.backgroundColor = 'green';
-
-
-                        }
-                        else{
-                            document.getElementById(name).style.backgroundColor = 'red';
+                        if(!answered){
+                            var name = event.target.id;
+                            answered = true;
+                            document.getElementById("state").innerHTML = event.target.name;
+                            if(name == 'ans-2'){
+                                document.getElementById(name).style.backgroundColor = 'green';
+                            }
+                            else{
+                                document.getElementById(name).style.backgroundColor = 'red';
+                                wait(100)
+                                document.getElementById('ans-2').style.backgroundColor = 'green';
+                            }
                         }
                     });
                 }
@@ -53,6 +56,7 @@
                 <button type="button" id="ans-4" name="Incorrect">
                     "The Da Vinci Code"
                 </button>
+                <p id="state"></p>
             </div>
 
             <div class="section">
