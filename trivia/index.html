@@ -11,11 +11,11 @@
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(){
-                        var name = event.target.name;
+                        var name = event.target.id;
                         console.log(name);
                         if(name == 'correct'){
                             document.getElementById(name).style.backgroundColor = 'green';
-                            document.createElement("p").textContent = name.;
+                            //document.createElement("p").textContent = name.charAt(0).toUpperCase() + name.slice(1);
 
                         }
                         else{
@@ -40,16 +40,16 @@
                 <h3>
                     What book holds the record for the fastest selling book in history?
                 </h3>
-                <button type="button" name="incorrect">
+                <button type="button" id="ans-1" name="incorrect">
                     "Harry Potter and the Deathly Hallows"
                 </button>
                 <button type="button" name="correct">
                     "Don Quixote"
                 </button>
-                <button  type="button" name="incorrect">
+                <button  type="button" id="incorrect">
                     "The Hobbit"
                 </button>
-                <button type="button" name="incorrect">
+                <button type="button" id="incorrect">
                     "The Da Vinci Code"
                 </button>
             </div>
