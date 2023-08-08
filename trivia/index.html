@@ -6,8 +6,8 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let buttons = document.querySelectorAll('button');
-            buttons.addEventListener("click", function(name){
+            let button = document.getElementById('ans-2');
+            button.addEventListener("click", function(name){
                 console.log("click");
                 if(name == 'ans-2'){
                         document.getElementById(name).style.backgroundColor = 'green';
