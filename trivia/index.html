@@ -27,16 +27,15 @@
                     });
                 }
 
-                let open = document.querySelector("form");
+                let open = document.getElementById("submit");
                 open.addEventListener("submit", function(){
-                    let ans = document.getElementById("submit");
-                    console.log(ans);
+                    let ans = document.getElementById("box");
                     if(ans.value == "Octagon"){
-                        open.style.backgroundColor = 'green';
+                        ans.style.backgroundColor = 'green';
                         document.getElementById("check").innerHTML = "Correct!";
                     }
                     else{
-                        open.style.backgroundColor = 'red';
+                        ans.style.backgroundColor = 'red';
                         document.getElementById("check").innerHTML = "Incorrect";
 
                     }
@@ -82,10 +81,9 @@
                 <h3>
                     What geometric shape is generally used for stop signs?
                 </h3>
-                <form>
-                    <input type="text" name="answer">
-                    <input id="submit" type="submit" value="Check Answer">
-                </form>
+                <input id="box" type="text" name="answer">
+                <input id="submit" type="submit" value="Check Answer">
+
                 <p id="check"></p>
             </div>
         </div>
