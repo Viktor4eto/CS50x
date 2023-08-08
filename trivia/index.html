@@ -9,13 +9,13 @@
             document.addEventListener("DOMContentLoaded", function(){
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
-                    button.addEventListener("click", function('name'){
+                    button.addEventListener("click", function(event){
                         console.log("click");
                         if(name == 'ans-2'){
-                            document.getElementById('name').style.backgroundColor = 'green';
+                            document.getElementById(name).style.backgroundColor = 'green';
                         }
                         else{
-                            document.getElementById('name').style.backgroundColor = 'red';
+                            document.getElementById(name).style.backgroundColor = 'red';
                         }
                     });
                 }
