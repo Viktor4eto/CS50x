@@ -10,8 +10,8 @@
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(event){
-                        var name = button.name;
-                        console.log("click");
+                        let name = button.id;
+                        console.log(name);
                         if(name == 'ans-2'){
                             document.getElementById(name).style.backgroundColor = 'green';
                         }
