@@ -28,7 +28,7 @@
                 }
 
                 let open = document.getElementById("submit");
-                open.addEventListener("submit", function(){
+                open.addEventListener("click", function(){
                     let ans = document.getElementById("box");
                     if(ans.value == "Octagon"){
                         ans.style.backgroundColor = 'green';
@@ -82,7 +82,7 @@
                     What geometric shape is generally used for stop signs?
                 </h3>
                 <input id="box" type="text" name="answer">
-                <input id="submit" type="submit" value="Check Answer">
+                <input id="submit" type="button" value="Check Answer">
 
                 <p id="check"></p>
             </div>
