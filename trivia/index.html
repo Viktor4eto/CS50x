@@ -33,7 +33,7 @@
                     if(!openAnswer){
                         openAnswer = true;
                         let ans = document.getElementById("box");
-                        if(ans.value == "Octagon"){
+                        if(ans.value.toLowerCase() == "octagon"){
                             ans.style.backgroundColor = 'green';
                             document.getElementById("check").innerHTML = "Correct!";
                         }
