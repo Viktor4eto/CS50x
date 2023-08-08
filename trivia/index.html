@@ -27,9 +27,9 @@
                     });
                 }
 
-                let open = document.getElementById("submit");
+                let open = document.querySelector("form");
                 open.addEventListener("submit", function(){
-                    
+                    if(open.name )
                 });
 
 
@@ -74,7 +74,7 @@
                 </h3>
                 <form>
                     <input type="text" name="answer">
-                    <input id="submit" type="submit" value="Check Answer">
+                    <input type="submit" value="Check Answer">
                 </form>
             </div>
         </div>
