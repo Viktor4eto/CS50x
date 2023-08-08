@@ -8,7 +8,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', function(){
                 let buttons = document.querySelectorAll('button');
-                buttons.addEventListener('click', function(id){
+                buttons.addEventListener('click', function change(id){
                     if(id == 'correct'){
                         document.getElementById('correct').backgroundColor = 'green';
                     }
@@ -32,7 +32,7 @@
                 <h3>
                     What book holds the record for the fastest selling book in history?
                 </h3>
-                <button id="incorrect">
+                <button id="incorrect" onclic="change(id);">
                     "Harry Potter and the Deathly Hallows"
                 </button>
                 <button id="correct">
