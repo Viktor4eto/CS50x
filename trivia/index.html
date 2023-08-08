@@ -28,10 +28,16 @@
                 }
 
                 let open = document.querySelector("form");
-                open.addEventListener("submit", function(event){
-                    if(open.name == "Octagon"){
+                open.addEventListener("submit", function(){
+                    let ans = document.getElementById("submit");
+                    if(ans.value == "Octagon"){
                         open.style.backgroundColor = 'green';
                         document.getElementById("check").innerHTML = "Correct!";
+                    }
+                    else{
+                        open.style.backgroundColor = 'red';
+                        document.getElementById("check").innerHTML = "Incorrect";
+
                     }
                 });
 
@@ -77,7 +83,7 @@
                 </h3>
                 <form>
                     <input type="text" name="answer">
-                    <input type="submit" value="Check Answer">
+                    <input id="submit" type="submit" value="Check Answer">
                 </form>
                 <p id="check"></p>
             </div>
