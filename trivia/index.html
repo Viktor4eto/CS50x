@@ -9,6 +9,7 @@
 
             document.addEventListener("DOMContentLoaded", function(){
                 let answered = false;
+                let openAnswer = false;
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(){
@@ -29,15 +30,17 @@
 
                 let open = document.getElementById("submit");
                 open.addEventListener("click", function(){
-                    let ans = document.getElementById("box");
-                    if(ans.value == "Octagon"){
-                        ans.style.backgroundColor = 'green';
-                        document.getElementById("check").innerHTML = "Correct!";
-                    }
-                    else{
-                        ans.style.backgroundColor = 'red';
-                        document.getElementById("check").innerHTML = "Incorrect";
-
+                    if(!openAnswer){
+                        openAnswer = true;
+                        let ans = document.getElementById("box");
+                        if(ans.value == "Octagon"){
+                            ans.style.backgroundColor = 'green';
+                            document.getElementById("check").innerHTML = "Correct!";
+                        }
+                        else{
+                            ans.style.backgroundColor = 'red';
+                            document.getElementById("check").innerHTML = "Incorrect";
+                        }
                     }
                 });
 
@@ -81,7 +84,7 @@
                 <h3>
                     What geometric shape is generally used for stop signs?
                 </h3>
-                <form action="">
+                <form onsubmit="return false;">
                     <input id="box" type="text" name="answer">
                     <input id="submit" type="submit" value="Check Answer">
                 </form>
