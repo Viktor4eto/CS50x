@@ -28,7 +28,7 @@
                 }
 
                 let open = document.querySelector("form");
-                open.addEventListener("submit", function(){
+                open.addEventListener("submit", function(event){
                     if(open.name == "Octagon"){
                         open.style.backgroundColor = 'green';
                         document.getElementById("check").innerHTML = "Correct!";
