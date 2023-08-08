@@ -6,16 +6,21 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let button = document.getElementById('ans-2');
-            button.addEventListener("click", function(name){
-                console.log("click");
-                if(name == 'ans-2'){
-                        document.getElementById(name).style.backgroundColor = 'green';
-                    }
-                    else{
-                        document.getElementById(name).style.backgroundColor = 'red';
-                    }
-                });
+            document.addEventListener("DOMContentLoaded", function(){
+                let buttons = document.querySelectorAll("button");
+                for(var button of buttons){
+                    button.addEventListener("click", function(name){
+                        console.log("click");
+                        if(name == 'ans-2'){
+                            document.getElementById(name).style.backgroundColor = 'green';
+                        }
+                        else{
+                            document.getElementById(name).style.backgroundColor = 'red';
+                        }
+                    });
+                }
+            });
+
         </script>
     </head>
     <body>
