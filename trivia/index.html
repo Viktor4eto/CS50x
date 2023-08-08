@@ -6,8 +6,16 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            document.addEventListener('DOMContentLoaded' function(){
-                let 
+            document.addEventListener('DOMContentLoaded', function(){
+                let buttons = document.querySelectorAll('button');
+                buttons.addEventListener('click', function(id){
+                    if(id == 'correct'){
+                        document.getElementById('correct').backgroundColor = 'green';
+                    }
+                    else{
+                        document.getElementById('incorrect').backgroundColor = 'red';
+                    }
+                });
             });
         </script>
     </head>
