@@ -11,7 +11,7 @@
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(){
-                        var name = event.id;
+                        var name = event.target.id;
                         console.log(name);
                         if(name == 'ans-2'){
                             document.getElementById(name).style.backgroundColor = 'green';
