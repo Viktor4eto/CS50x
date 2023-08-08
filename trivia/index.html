@@ -9,8 +9,8 @@
             document.addEventListener("DOMContentLoaded", function(){
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
-                    button.addEventListener("click", function(event){
-                        let name = button.id;
+                    button.addEventListener("click", function(){
+                        let name = buttons.id;
                         console.log(name);
                         if(name == 'ans-2'){
                             document.getElementById(name).style.backgroundColor = 'green';
