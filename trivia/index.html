@@ -11,10 +11,11 @@
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
                     button.addEventListener("click", function(){
-                        var name = event.target.id;
+                        var name = event.target.name;
                         console.log(name);
-                        if(name == 'ans-2'){
+                        if(name == 'correct'){
                             document.getElementById(name).style.backgroundColor = 'green';
+                            document.getElementBy
                         }
                         else{
                             document.getElementById(name).style.backgroundColor = 'red';
@@ -38,16 +39,16 @@
                 <h3>
                     What book holds the record for the fastest selling book in history?
                 </h3>
-                <button type="button" id="ans-1" name="incorrect">
+                <button type="button" name="incorrect">
                     "Harry Potter and the Deathly Hallows"
                 </button>
-                <button type="button" id="ans-2" name="correct">
+                <button type="button" name="correct">
                     "Don Quixote"
                 </button>
-                <button  type="button" id="ans-3" name="incorrect">
+                <button  type="button" name="incorrect">
                     "The Hobbit"
                 </button>
-                <button type="button" id="ans-4" name="incorrect">
+                <button type="button" name="incorrect">
                     "The Da Vinci Code"
                 </button>
                 <p></p>
