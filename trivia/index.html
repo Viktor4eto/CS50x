@@ -9,7 +9,7 @@
             document.addEventListener("DOMContentLoaded", function(){
                 let buttons = document.querySelectorAll("button");
                 for(var button of buttons){
-                    button.addEventListener("click", function(){
+                    button.addEventListener("click", function(event){
                         let name = buttons.id;
                         console.log(name);
                         if(name == 'ans-2'){
