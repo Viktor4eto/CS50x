@@ -10,8 +10,8 @@
             document.addEventListener("DOMContentLoaded", function(){
                 let answered = false;
                 let buttons = document.querySelectorAll("button");
-                for(var button of buttons){
-                    button.addEventListener("click", function(){
+                for(i = 0; i < buttons.length - 2; i++){
+                    buttons[i].addEventListener("click", function(){
                         if(!answered){
                             var name = event.target.id;
                             answered = true;
@@ -25,6 +25,7 @@
                             }
                         }
                     });
+                    
                 }
 
 
