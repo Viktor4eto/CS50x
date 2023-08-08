@@ -21,8 +21,7 @@
                             }
                             else{
                                 document.getElementById(name).style.backgroundColor = 'red';
-                                wait(100);
-                                document.getElementById('ans-2').style.backgroundColor = 'green';
+                                setTimeout(() => {document.getElementById('ans-2').style.backgroundColor = 'green';}, 300);
                             }
                         }
                     });
