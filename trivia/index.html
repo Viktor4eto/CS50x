@@ -29,7 +29,10 @@
 
                 let open = document.querySelector("form");
                 open.addEventListener("submit", function(){
-                    if(open.name )
+                    if(open.name == "Octagon"){
+                        open.style.backgroundColor = 'green';
+                        document.getElementById("check").innerHTML = "Correct!";
+                    }
                 });
 
 
@@ -76,6 +79,7 @@
                     <input type="text" name="answer">
                     <input type="submit" value="Check Answer">
                 </form>
+                <p id="check"></p>
             </div>
         </div>
     </body>
