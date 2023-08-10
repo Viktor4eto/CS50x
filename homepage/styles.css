@@ -17,11 +17,7 @@ row > h1 {
 button{
     font-size: 1.25em;
 }
-img.centered{
+img{
     max-width: 20%;
     height: auto;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
 }
