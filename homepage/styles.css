@@ -28,7 +28,7 @@ a {
     text-decoration: none;
 }
 
-button:hover, a:hover{
+button:hover, button > a:{
     transition-duration: 0.4s;
     background: black;
     color: white;
