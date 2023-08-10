@@ -6,6 +6,6 @@ div > h1 {
 }
 
 .vertical-center{
-    position: absolute;
-    top: 30px;
+    position: relative;
+    top: 0px;
 }
