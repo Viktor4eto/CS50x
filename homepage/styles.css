@@ -28,9 +28,12 @@ a {
     text-decoration: none;
 }
 
-button:hover, button > a:{
+button:hover {
     transition-duration: 0.4s;
     background: black;
+}
+
+button:hover > a {
     color: white;
 }
 
