@@ -17,3 +17,7 @@ row > h1 {
 button{
     font-size: 1.25em;
 }
+img{
+    max-width: 100%;
+    height: auto;
+}
