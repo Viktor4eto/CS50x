@@ -1,5 +1,7 @@
-h1{
-    text-align=center;
-    margin-top=30px;
-    margin-bottom=30px;
+div > h1 {
+    text-align: center;
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #0000ff;
 }
