@@ -37,3 +37,7 @@ section > p {
     text-justify: inner-word;
 
 }
+
+form {
+    margin: 0;
+}
