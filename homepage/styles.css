@@ -67,3 +67,8 @@ form{
     margin-right: auto;
     width: 50%;
 }
+
+nav{
+    position: fixed;
+    bottom: 0;
+}
