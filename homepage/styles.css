@@ -20,4 +20,5 @@ button{
 img{
     max-width: 100%;
     height: auto;
+    margin-bottom: margin-top;
 }
