@@ -1,11 +1,11 @@
 div > h1 {
-    padding: 0px;
+    padding: 60px;
     background: blue;
     border: 1px solid black;
-    text-align: center;
 }
-
-.vertical-center{
-    position: relative;
-    top: 0px;
+h1.centered{
+    text-align:
+}
+.centered{
+    text-align: center;
 }
