@@ -28,9 +28,8 @@ a {
     text-decoration: none;
 }
 
-button:hover > *{
+button:hover, a:hover{
     transition-duration: 0.4s;
-    border: 1px solid black;
     background: black;
     color: white;
 }
