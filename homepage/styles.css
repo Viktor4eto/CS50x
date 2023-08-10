@@ -67,3 +67,7 @@ form{
     margin-right: auto;
     width: 50%;
 }
+
+br{
+    height: 0.5em;
+}
