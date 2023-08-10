@@ -67,10 +67,3 @@ form{
     margin-right: auto;
     width: 50%;
 }
-
-br{
-    display: block;
-    margin-bottom: 2px;
-    font-size:2px;
-    line-height: 2px;
-}
