@@ -9,8 +9,9 @@
         <script>
             document.addEventListener("DOMContentLoaded", function(){
                 let action = document.getElementById("enter");
-                action.addEventListener("submit", function(){
-
+                action.addEventListener("click", function(){
+                    console.log(event.value);
+                    document.getElementById("responses").innerHTML += " " + document.getElementById("form").value;
                 });
             });
         </script>
@@ -66,9 +67,12 @@
         <div class="container">
             <row class="row">
                 <form class="col-lg-12 col-md-12" onsubmit="return false;">
-                    <input type="text" placeholder="What are your interests?" size="50">
+                    <input id="form" type="text" placeholder="What are your interests?" size="50">
                     <input id="enter" type="submit" value="Enter">
                 </form>
+            </row>
+            <row class="row">
+                <ul id="responses"></ul>
             </row>
         </div>
         <br>
