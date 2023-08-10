@@ -12,10 +12,11 @@
                 action.addEventListener("click", function(){
                     console.log(event.value);
                     var node = document.createElement('li');
-                    node.appendChild(document.createTextNode(document.getElementById("form").value));
+                    let form = document.getElementById("form")
+                    node.appendChild(document.createTextNode(form.value));
 
                     document.querySelector('ul').appendChild(node);
-
+                    form.reset();
                     //document.getElementById("responses").innerHTML += " " + document.getElementById("form").value;
                 });
             });
