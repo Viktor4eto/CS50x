@@ -31,3 +31,9 @@ a{
 a:hover {
     color: #0000ff;
 }
+
+section > p {
+    text-align: justify;
+    text-justify: inner-word;
+
+}
