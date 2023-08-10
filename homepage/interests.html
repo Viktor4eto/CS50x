@@ -11,7 +11,12 @@
                 let action = document.getElementById("enter");
                 action.addEventListener("click", function(){
                     console.log(event.value);
-                    document.getElementById("responses").innerHTML += " " + document.getElementById("form").value;
+                    var node = document.createElement('li');
+                    node.appendChild(document.createTextNode(document.getElementById("form").value));
+
+                    document.querySelector('ul').appendChild(node);
+
+                    //document.getElementById("responses").innerHTML += " " + document.getElementById("form").value;
                 });
             });
         </script>
