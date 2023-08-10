@@ -38,3 +38,8 @@ section > p {
 
 }
 
+form{
+    position: relative;
+    left: -60px;
+    width: 100px;
+}
