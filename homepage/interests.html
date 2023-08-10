@@ -16,7 +16,7 @@
                     node.appendChild(document.createTextNode(form.value));
 
                     document.querySelector('ul').appendChild(node);
-                    form.reset();
+                    form.value = '';
                     //document.getElementById("responses").innerHTML += " " + document.getElementById("form").value;
                 });
             });
