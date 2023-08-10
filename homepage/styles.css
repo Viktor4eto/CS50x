@@ -1,12 +1,10 @@
 div > h1 {
-    padding: 0px;
-    height: 300px;
+    padding: 10%;
+    font-size: 5em;
+    height: 250px;
     margin-top: 10px;
     background: #A5FCE7;
     border: 1px solid black;
-}
-h1.centered{
-    text-align: center;
 }
 
 .centered{
