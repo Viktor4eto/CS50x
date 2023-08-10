@@ -12,6 +12,7 @@
                 action.addEventListener("click", function(){
                     console.log(event.value);
                     var node = document.createElement('li');
+                    node.classList.add("list-group-item");
                     let form = document.getElementById("form")
                     node.appendChild(document.createTextNode(form.value));
 
@@ -78,7 +79,7 @@
                 </form>
             </row>
             <row class="row">
-                <ul id="responses" class="list-group"></ul>
+                <ul id="responses" class="list-group centered"></ul>
             </row>
         </div>
         <br>
