@@ -1,6 +1,7 @@
 div > h1 {
     padding: 60px;
-    background: #;
+    margin-top: 10px;
+    background: #A5FCE7;
     border: 1px solid black;
 }
 h1.centered{
