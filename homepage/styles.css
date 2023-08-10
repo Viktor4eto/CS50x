@@ -55,3 +55,8 @@ form{
     width: 100%;
     max-height: 445px;
 }
+
+.resize{
+    width: 50%;
+    height: 50%;
+}
