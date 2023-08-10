@@ -1,6 +1,5 @@
 div > h1 {
     padding: 0px;
-    padding-bottom: 30px;
     background: blue;
     border: 1px solid black;
     text-align: center;
@@ -8,5 +7,5 @@ div > h1 {
 
 .vertical-center{
     position: absolute;
-    
+    top: 30px;
 }
