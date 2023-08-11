@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for(button of buttons){
         button.addEventListener("click", function (){
-            let button_id = event.target.firstChild.id;
+            let button_id = event.target.firstChild;
             console.log(button_id)
-            var get = document.getElementById(button_id);
-            console.log(get);
+
         });
     }
     console.log(buttons);
