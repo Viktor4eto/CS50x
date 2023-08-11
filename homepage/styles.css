@@ -82,6 +82,6 @@ ul {
     padding-bottom: 50px;
 }
 
-#form {
-    margin-right: 0px;
+#form, #enter {
+    margin-left: 8em;
 }
