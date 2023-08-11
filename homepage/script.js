@@ -4,13 +4,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for(button of buttons){
         button.addEventListener("click", function (){
-            let anchor_id = event.target.firstChild.id;
-            console.log(anchor_id)
-            var url = location.href;
-            console.log(url);              //Saving URL without hash.
-            location.href = "#"+anchor_id;                 //Navigate to the target element.
-            history.replaceState(null,null,url);
+            let anchor = event.target.firstChild;
+            console.log(anchor);
         });
     }
-    console.log(buttons);
+    
 });
