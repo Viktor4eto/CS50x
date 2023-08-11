@@ -85,3 +85,7 @@ ul {
 #form, #enter {
     margin-left: 7em;
 }
+
+#enter {
+    margin-bottom: 50px;
+}
