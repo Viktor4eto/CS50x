@@ -15,6 +15,7 @@ row > h1 {
 }
 
 .btn{
+    background: grey;
     border: 1px solid black;
     font-size: 1.25em;
 }
@@ -25,6 +26,7 @@ img{
 }
 
 a {
+
     text-decoration: none;
 }
 
@@ -34,9 +36,6 @@ a {
     color: white;
 }
 
-a:hover {
-    color: white;
-}
 
 section > p {
     text-align: justify;
