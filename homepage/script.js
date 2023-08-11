@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for(button of buttons){
         button.addEventListener("click", function (){
+            console.log(event.target);
             location.href = event.target.href;
         });
     }
