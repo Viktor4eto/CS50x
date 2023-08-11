@@ -64,8 +64,6 @@ form {
     max-width: 480px;
 }
 
-
-
 .img-center {
     display: block;
     margin-left: auto;
@@ -77,8 +75,4 @@ html, body { height: 100%;}
 body > nav {
   position: sticky;
   top: 100vh;
-}
-
-ul {
-    padding-bottom: 50px;
 }
