@@ -15,7 +15,8 @@
 }
 
 .btn {
-    background: grey;
+    border-radius: 0px;
+    background: #D3D3D3;
     border: 1px solid grey;
     color: black;
     font-size: 1.25em;
