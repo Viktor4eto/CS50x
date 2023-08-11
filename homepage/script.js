@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function(){
     let buttons = elem.children;
 
     for(button of buttons){
-        button.addEventListener("click", => (){
-            
+        button.addEventListener("click", function (){
+            console.log(event.firstChild);
         });
     }
     console.log(buttons);
