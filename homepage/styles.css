@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-button > a {
+button {
     font-size: 1.25em;
 }
 
@@ -34,7 +34,7 @@ button:hover {
     color: white;
 }
 
-button:hover > a{
+button:hover {
     color: white;
 }
 
