@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for(button of buttons){
         button.addEventListener("click", function (){
-            let anchor = event.target.firstChild;
-            console.log(anchor);
+            let name = event.target.firstChild.href;
+            location.name = name;
         });
     }
 
