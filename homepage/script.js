@@ -8,5 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log(anchor);
         });
     }
-    
+
 });
+
+//<button class="col-lg-4 col-md-4 col-sm-4 btn"></button>
