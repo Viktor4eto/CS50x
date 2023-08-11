@@ -74,7 +74,7 @@ form {
 }
 
 nav {
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }
 
