@@ -14,9 +14,7 @@ row > h1 {
     text-align: center;
 }
 
-.btn{
-    background: grey;
-    border: 1px solid black;
+button > a {
     font-size: 1.25em;
 }
 
@@ -33,6 +31,10 @@ a {
 button:hover {
     transition-duration: 0.4s;
     background: black;
+    color: white;
+}
+
+button:hover > a{
     color: white;
 }
 
