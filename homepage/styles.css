@@ -75,7 +75,7 @@ form {
 
 nav {
     position: sticky;
-    bottom: 0;
+    top: 100vh;
 }
 
 ul {
