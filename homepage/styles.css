@@ -23,7 +23,7 @@
     font-size: 1.25em;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
@@ -51,13 +51,13 @@ article > p {
 
 }
 
-form{
+form {
     position: relative;
     left: -60px;
     width: 100px;
 }
 
-.crop{
+.crop {
     object-fit: none;
     object-position: center;
     width: 100%;
@@ -74,12 +74,12 @@ form{
     width: 50%;
 }
 
-nav{
+nav {
     position: fixed;
     bottom: 0;
 }
 
-ul{
+ul {
     padding-bottom: 50px;
 }
 </style>
