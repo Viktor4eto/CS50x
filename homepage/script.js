@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    let nav = document.getElementsByTagName("nav");
-    let buttons = nav[0].parentElement.childNodes;
+    let elem = document.getElementById("nav");
+    let buttons = elem.parentElement.childNodes;
     console.log(buttons);
 });
