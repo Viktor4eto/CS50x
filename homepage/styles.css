@@ -44,7 +44,7 @@ a:hover {
 }
 
 
-section > p {
+article > p {
     text-align: justify;
     text-justify: inner-word;
 
