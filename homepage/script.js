@@ -11,4 +11,5 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+//        <script src="script.js"></script>
 //<button class="col-lg-4 col-md-4 col-sm-4 btn"></button>
