@@ -1,7 +1,7 @@
 * {
     font-family: Times New Roman, serif;
 }
-row > h1 {
+.row > h1 {
     padding: 10%;
     font-size: 5em;
     height: 250px;
