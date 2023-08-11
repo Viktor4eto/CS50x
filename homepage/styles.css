@@ -51,9 +51,8 @@ article > p {
 }
 
 form {
-    position: relative;
-    left: -60px;
-    width: 100px;
+    position: sticky;
+    right: 0;
 }
 
 .crop {
