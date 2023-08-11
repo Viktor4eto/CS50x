@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function(){
     for(button of buttons){
         button.addEventListener("click", function (){
             let button_id = event.target.firstChild.id;
-            console.log(button_id);
+            let loc = location.href
             var get = document.getElementById(button_id);
-            console.log(get);
+            console.log(get.location.href);
         });
     }
     console.log(buttons);
