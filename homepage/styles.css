@@ -25,16 +25,16 @@ img{
 }
 
 a {
-    color: black;
     text-decoration: none;
 }
 
 .btn:hover {
     transition-duration: 0.4s;
     background: black;
+    color: white;
 }
 
-button:hover > a {
+a:hover {
     color: white;
 }
 
