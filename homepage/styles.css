@@ -72,10 +72,11 @@ form {
     margin-right: auto;
     width: 50%;
 }
+html, body { height: 100%;}
 
-nav {
-    position: sticky;
-    top: 100vh;
+body > nav {
+  position: sticky;
+  top: 100vh;
 }
 
 ul {
