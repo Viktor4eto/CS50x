@@ -28,8 +28,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for person in {{birthdays}} %}
-                            <td></td>
+                        {% for person in {{birthdays}}: %}
+                            <td>person.name</td>
+                            <td>person.month + person.day</td>
+                        {% endfor %}
                         <!-- TODO: Loop through the database entries to display them in this table -->
                     </tbody>
                 </table>
