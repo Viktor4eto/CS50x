@@ -28,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for person in birthdays: %}
+                        {% for person in {{birthdays}}: %}
                             <td>person.name</td>
                             <td>person.month + person.day</td>
                         {% endfor %}
