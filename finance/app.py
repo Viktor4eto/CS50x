@@ -38,8 +38,7 @@ def index():
     final = [{}]
     portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
 
-    for i in range(len(portfolio) - 1):
-        if portfolio[i].name == portfolio[i+1].name:
+    for dict in portfolio:
 
     return apology("TODO")
 
