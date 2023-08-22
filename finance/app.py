@@ -73,7 +73,10 @@ def buy():
         if shares < 1:
             return apology("Invalid shares", 400)
 
-        cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
+        try:
+            cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
+        except TypeError:
+            cash = 0
         lookedup = lookup(symbol)
         if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
