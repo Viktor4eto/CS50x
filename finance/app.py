@@ -36,7 +36,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    cash = float(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
     winnings = 0;
 
     for share in portfolio:
@@ -44,7 +44,7 @@ def index():
         share["total_value"] = share["current_price"] * share["total"]
         winnings += share["total_value"]
 
-    return render_template("index.html", portfolio=portfolio)
+    return render_template("index.html", portfolio=portfolio, cash=cash, total=(cash+winnings))
 
 
 @app.route("/buy", methods=["GET", "POST"])
