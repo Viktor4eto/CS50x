@@ -36,7 +36,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
-    portfolio = db.execute("SELECT symbol FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
+    portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
     return apology("TODO")
 
 
