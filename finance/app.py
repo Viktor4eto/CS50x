@@ -38,7 +38,6 @@ def index():
     final = {}
     portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
 
-    save = portfolio[0]
 
     for share in portfolio:
         for k, v in share.items():
