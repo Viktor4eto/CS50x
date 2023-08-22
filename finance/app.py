@@ -103,6 +103,8 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
+    if request.method == "GET":
+        return render_template("quote.hmtl")
     return apology("TODO")
 
 
@@ -118,7 +120,7 @@ def register():
 
         if not username:
             return apology("Enter a username", 403)
-        
+
         if username in [i["username"] for i in db.execute("SELECT username FROM users;")]:
             return apology("Username already exists", 403)
 
