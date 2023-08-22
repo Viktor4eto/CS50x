@@ -36,12 +36,14 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    winnings = 0;
 
     for share in portfolio:
         share["current_price"] = lookup(share["symbol"])["price"];
         share["total_value"] = share["current_price"] * share["total"]
+        winnings += share["total_value"]
 
-    print(portfolio)
 
     return render_template("index.html", portfolio=portfolio)
 
