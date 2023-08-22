@@ -210,5 +210,5 @@ def sell():
         if symbol not in all:
             return apology("You have no such stock", 400)
 
-        
+        if ammount > 
         return redirect("/")
