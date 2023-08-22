@@ -67,6 +67,7 @@ def buy():
         if shares*lookup(symbol)["price"] > cash:
             return apology("Can't afford", 400)
 
+        
         return redirect("/")
 
 @app.route("/history")
