@@ -189,4 +189,6 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "GET":
-        return render_template("sell.html")
+        shares = db.execute("SELECT symbol FROM owned_shares WHERE user_id = ?", session["user_id"])
+        all = [share[symbol] for share in shares]
+        return render_template("sell.html", all)

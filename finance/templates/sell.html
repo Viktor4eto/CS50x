@@ -8,7 +8,11 @@
     <form action="/sell" method="post">
 
         <div class="mb-3">
-            <input autocomplete="off" class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="select">
+            <select class="form-select mx-auto w-auto" name="symbol">
+                <option disabled="" selected="">Symbol</option>
+                {% for share in shares %}
+                    <option> {{ share }} </option>
+            </select>
         </div>
         <div class="mb-3">
             <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" min="1">
