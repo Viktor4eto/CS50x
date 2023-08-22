@@ -110,7 +110,7 @@ def quote():
         symbol = request.form.get("symbol")
         value = lookup(symbol)
         if not value:
-            return apology("Invalid symbol", 400)
+            return apology("Invalid symbol", 403)
 
         return render_template("quoted.html", symbol=symbol, value=value["price"])
     #return apology("TODO")
@@ -139,6 +139,9 @@ def register():
             return apology("The passwords are not the same", 403)
 
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
+        session["user_id"] = rows[0]["id"]
 
         return redirect("/")
 
