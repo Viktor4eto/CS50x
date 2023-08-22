@@ -45,8 +45,22 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
     else:
-        
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
 
+        if not symbol:
+            return apology("Missing symbol", 400)
+
+        if not shares:
+            return apology("Missing shares", 400)
+
+        if not lookup(symbol):
+            return apology("Invalid symbol", 400)
+
+        if shares < 1:
+            return apology("Invalid shares", 400)
+
+        return redirect("/")
 
 @app.route("/history")
 @login_required
