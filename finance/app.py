@@ -35,10 +35,12 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-
+    final = [{}]
     portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
+
     for i in range(len(portfolio) - 1):
-        portfolio
+        if portfolio[i].name == portfolio[i+1].name:
+
     return apology("TODO")
 
 
