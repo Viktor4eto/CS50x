@@ -42,6 +42,8 @@ def index():
     for share in portfolio:
         share["current_price"] = lookup(share["symbol"])["price"];
         share["total_value"] = share["current_price"] * share["total"]
+        if share["total"] == 0:
+            portfolio.remove(share)
         winnings += share["total_value"]
 
     return render_template("index.html", portfolio=portfolio, cash=cash, total=(cash+winnings))
@@ -222,5 +224,6 @@ def sell():
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], symbol, -ammount, current_price)
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", current_price*ammount, session["user_id"])
 
-        if db.execute("SELECT symbol FROM owned_shares WHERE user_id = ? AND total = 0")
+        if db.execute("SELECT symbol FROM owned_shares WHERE user_id = ? AND total = 0", session[user_id]):
+            
         return redirect("/")
