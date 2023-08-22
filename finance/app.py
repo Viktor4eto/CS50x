@@ -112,7 +112,9 @@ def register():
         return render_template("register.html")
 
     else:
-        
+        username = request.form.get("username")
+        if request.form.get("username") is None or re:
+            return apology("Enter a username", 403)
         return redirect("/")
 
 
