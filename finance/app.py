@@ -193,4 +193,22 @@ def sell():
         all = [share["symbol"] for share in shares]
         return render_template("sell.html", shares=all)
     else:
+        symbol = request.form.get("symbol")
+        ammount = request.form.get("shares")
+
+        if not symbol:
+            return apology("Please select a stock", 400)
+
+        if not ammount:
+            return apology("Enter ammount of stocks", 400)
+
+        ammount = int(ammount)
+
+        if ammount < 0:
+            return apology("Invalid ammount", 400)
+
+        if symbol not in all:
+            return apology("You have no such stock", 400)
+
         
+        return redirect("/")
