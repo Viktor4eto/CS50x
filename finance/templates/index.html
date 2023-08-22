@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table table-stripped">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th class="text-start">Symbol</th>
@@ -19,11 +19,22 @@
         {% for share in portfolio%}
 
             <tr>
-
-            </tr>
-                <td>
-
+                <td class="text-start">
+                    {{share.symbol}}
                 </td>
+                <td class="text-start">
+                    {{share.symbol}}
+                </td>
+                <td class="text-end">
+                    {{share.total}}
+                </td>
+                <td class="text-end">
+                    {{share.current_price | usd}}
+                </td>
+                <td class="text-end">
+                    {{share.total_value | usd}}
+                </td>
+            </tr>
 
         {%endfor%}
         </tbody>
