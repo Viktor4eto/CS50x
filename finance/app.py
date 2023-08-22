@@ -196,7 +196,7 @@ def register():
 def sell():
     """Sell shares of stock"""
 
-    shares = db.execute("SELECT symbol FROM owned_shares WHERE user_id = ?", session["user_id"])
+    shares = db.execute("SELECT symbol FROM owned_shares WHERE user_id = ? ORDER BY symbol", session["user_id"])
     all = [share["symbol"] for share in shares]
 
     if request.method == "GET":
@@ -228,6 +228,6 @@ def sell():
         db.execute("UPDATE owned_shares SET total = total - ? WHERE user_id = ? AND symbol = ?", ammount, session["user_id"], symbol)
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], symbol, -ammount, current_price)
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", current_price*ammount, session["user_id"])
-        db.execute("DELETE FROM owned_shares WHERE user_id = ? AND total = 0", session[user_id])
+        db.execute("DELETE FROM owned_shares WHERE user_id = ? AND total <= 0", session["user_id"])
 
         return redirect("/")
