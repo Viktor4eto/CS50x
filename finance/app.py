@@ -119,6 +119,9 @@ def register():
         if not username:
             return apology("Enter a username", 403)
 
+        if username in db.execute("SELECT username FROM users;"):
+            return apology("Username already exists", 403)
+
         if not password or not verified:
             return apology("Enter a password and verify it", 403)
 
