@@ -35,20 +35,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    final = {}
-    portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
+    portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
 
-    save = portfolio[0]
-    final[save["symbol"]] = 0
-
-    for share in portfolio:
-        if share["symbol"] == save["symbol"]:
-            final[] += share["shares"]
-        else:
-            final[] = save["shares"]
-            save = share
-
-    print(final)
+    print(portfolio)
 
     return apology("TODO")
 
