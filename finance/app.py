@@ -113,6 +113,7 @@ def register():
 
     else:
         
+        return redirect("/")
 
 
 @app.route("/sell", methods=["GET", "POST"])
