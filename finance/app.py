@@ -69,8 +69,9 @@ def buy():
 
         cash -= shares*lookedup["price"]
 
-        db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?)", session["user_id"], lookedup["name"], shares, lookedup["price"])
-        db.execute("UPDATE ")
+        db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], lookedup["name"], shares, lookedup["price"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+
         return redirect("/")
 
 @app.route("/history")
