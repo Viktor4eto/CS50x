@@ -43,9 +43,9 @@ def index():
 
     for share in portfolio:
         if share["symbol"] == save["symbol"]:
-            final[save["symbol"]] += share["shares"]
+            final["AAPL"] += share["shares"]
         else:
-            final[save["symbol"]] = save["shares"]
+            final["AAPL"] = save["shares"]
             save = share
 
     print(final)
