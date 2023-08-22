@@ -38,15 +38,15 @@ def index():
     final = {}
     portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
 
+    save = portfolio[0]
+    final[save["symbol"]] = 0
 
     for share in portfolio:
-        for k, v in share.items():
-            if k == "symbol":
-                if share[key] in final.keys():
-                    final[share[key]] = share[key]
-                else:
-                    final[share[key]] += share[key]
-
+        if share["symbol"] == save["symbol"]:
+            final[save["symbol"]] += share["shares"]
+        else:
+            final[save["symbol"]] = save["shares"]
+            save = share
 
     print(final)
 
