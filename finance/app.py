@@ -46,7 +46,7 @@ def index():
                 if key in final.keys():
                     final[key] = share[key]
                 else:
-                    final[key] += share[key]
+                    final[key] = share[key]
 
         save = share;
 
