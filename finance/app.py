@@ -125,7 +125,7 @@ def register():
         if not password == verified:
             return apology("The passwords are not the same", 403)
 
-        db.execute("INSERT INTO users () VALUES(?, ?)")
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
 
         return redirect("/")
 
