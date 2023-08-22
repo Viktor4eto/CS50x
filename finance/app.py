@@ -188,9 +188,12 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+
+    shares = db.execute("SELECT symbol FROM owned_shares WHERE user_id = ?", session["user_id"])
+    all = [share["symbol"] for share in shares]
+
     if request.method == "GET":
-        shares = db.execute("SELECT symbol FROM owned_shares WHERE user_id = ?", session["user_id"])
-        all = [share["symbol"] for share in shares]
+
         return render_template("sell.html", shares=all)
     else:
         symbol = request.form.get("symbol")
@@ -210,5 +213,8 @@ def sell():
         if symbol not in all:
             return apology("You have no such stock", 400)
 
-        if ammount > 
+        if ammount > db.execute("SELECT total FROM owned_shares WHERE user_id = ?", session["user_id"])[0]["total"]:
+            return apology("You have less stocks than that", 400)
+
+        db.execute("")
         return redirect("/")
