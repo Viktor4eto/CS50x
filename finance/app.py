@@ -216,7 +216,9 @@ def sell():
         if ammount > db.execute("SELECT total FROM owned_shares WHERE user_id = ?", session["user_id"])[0]["total"]:
             return apology("You have less stocks than that", 400)
 
+        current_price = lookup(symbol)["price"]
+
         db.execute("UPDATE owned_shares SET total = total - ? WHERE user_id = ? AND symbol = ?", ammount, session["user_id"], symbol)
-        db.execute("INSERT INTO purchases (user_id, symbol, shares) VALUES(?, ?, ?)", session["user_id"], symbol, -ammount)
-        
+        db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], symbol, -ammount, current_price)
+
         return redirect("/")
