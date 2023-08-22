@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quoted
+    Quote
 {% endblock %}
 
 {% block main %}
-    A share of {{ symbol }} ({{ symbol }}) costs {{ cost | usd }}.
+    <form action="/register" method="post">
+
+        <div class="mb-3">
+            <input class="mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="password" autofocus>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
 {% endblock %}
