@@ -157,7 +157,7 @@ def quote():
         symbol = request.form.get("symbol")
         value = lookup(symbol)
         if not value:
-            return apology("Invalid symbol", 403)
+            return apology("Invalid symbol", 400)
 
         return render_template("quoted.html", symbol=value["name"], value=value["price"])
 
@@ -174,16 +174,16 @@ def register():
         verified = request.form.get("confirmation")
 
         if not username:
-            return apology("Enter a username", 403)
+            return apology("Enter a username", 400)
 
         if username in [i["username"] for i in db.execute("SELECT username FROM users;")]:
-            return apology("Username already exists", 403)
+            return apology("Username already exists", 400)
 
         if not password or not verified:
-            return apology("Enter a password and verify it", 403)
+            return apology("Enter a password and verify it", 400)
 
         if not password == verified:
-            return apology("The passwords are not the same", 403)
+            return apology("The passwords are not the same", 400)
 
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, generate_password_hash(password))
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
