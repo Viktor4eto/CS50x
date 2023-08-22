@@ -119,7 +119,7 @@ def register():
         if not username:
             return apology("Enter a username", 403)
 
-        if not password or not verified:
+        if not password and not verified:
             return apology("Enter a password and verify it", 403)
 
         if not password == verified:
