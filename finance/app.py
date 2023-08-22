@@ -44,6 +44,7 @@ def buy():
     """Buy shares of stock"""
     if request.method == "GET":
         return render_template("buy.html")
+
     else:
         symbol = request.form.get("symbol")
 
@@ -61,7 +62,10 @@ def buy():
         if shares < 1:
             return apology("Invalid shares", 400)
 
-        print(session["user_id"])
+        cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
+
+        if shares*lookup(symbol)["price"] > cash:
+            return apology("Can't afford", 400)
 
         return redirect("/")
 
