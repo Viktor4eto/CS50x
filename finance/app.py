@@ -171,7 +171,7 @@ def register():
     else:
         username = request.form.get("username")
         password = request.form.get("password")
-        verified = request.form.get("verify-password")
+        verified = request.form.get("confirmation")
 
         if not username:
             return apology("Enter a username", 403)
