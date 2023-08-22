@@ -44,7 +44,6 @@ def index():
         share["total_value"] = share["current_price"] * share["total"]
         winnings += share["total_value"]
 
-
     return render_template("index.html", portfolio=portfolio)
 
 
