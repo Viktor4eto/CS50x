@@ -37,8 +37,6 @@ def index():
     """Show portfolio of stocks"""
     portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
 
-    print(portfolio)
-
     return apology("TODO")
 
 
