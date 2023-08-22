@@ -35,10 +35,21 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    final = [{}]
+    final = {}
     portfolio = db.execute("SELECT symbol, shares FROM purchases WHERE user_id = ? ORDER BY symbol;", session["user_id"])
 
-    for dict in portfolio:
+    save = portfolio[0].key
+
+    for share in portfolio:
+        if save.symbol == share.symbol:
+            if share.symbol in final.keys():
+                final[share.symbol] = share.shares
+            else:
+                final[share.symbol] += share.shares
+
+        save = share.name;
+
+    print(final)
 
     return apology("TODO")
 
