@@ -63,11 +63,14 @@ def buy():
             return apology("Invalid shares", 400)
 
         cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
-
-        if shares*lookup(symbol)["price"] > cash:
+        lookedup = lookup(symbol)
+        if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
 
-        
+        cash -= shares*lookedup["price"]
+
+        db.execute("INSERT INTO purchases (user_id, symbol, shares) VALUES(?, ?, ?)", session["user_id"], lookedup["name"], lookedup[""])
+
         return redirect("/")
 
 @app.route("/history")
