@@ -46,13 +46,14 @@ def buy():
         return render_template("buy.html")
     else:
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+
+        try:
+            shares = int(request.form.get("shares"))
+        except ValueError:
+            return apology("Missing shares", 400)
 
         if not symbol:
             return apology("Missing symbol", 400)
-
-        if not shares:
-            return apology("Missing shares", 400)
 
         if not lookup(symbol):
             return apology("Invalid symbol", 400)
@@ -60,8 +61,7 @@ def buy():
         if shares < 1:
             return apology("Invalid shares", 400)
 
-
-        print(symbol)
+        print(session["user_id"])
 
         return redirect("/")
 
