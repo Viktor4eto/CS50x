@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
+    portfolio = db.execute("SELECT symbol, total FROM owned_shares WHERE user_id = ?;", session["user_id"])
     cash = float(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
     winnings = 0;
 
@@ -222,4 +222,5 @@ def sell():
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], symbol, -ammount, current_price)
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", current_price*ammount, session["user_id"])
 
+        if db.execute("SELECT total FROM owned_shares")
         return redirect("/")
