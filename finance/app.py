@@ -222,5 +222,7 @@ def sell():
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], symbol, -ammount, current_price)
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", current_price*ammount, session["user_id"])
 
-        if db.execute("SELECT total FROM owned_shares")
+        if db.execute("SELECT total FROM owned_shares WHERE user_id = ?", session["user_id"])[0]["total"] == 0:
+            db.execute("DELETE FROM owned_shares WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+            
         return redirect("/")
