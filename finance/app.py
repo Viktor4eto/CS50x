@@ -37,6 +37,11 @@ def index():
     """Show portfolio of stocks"""
     portfolio = db.execute("SELECT symbol, SUM(shares) AS total FROM purchases WHERE user_id = ? GROUP BY symbol;", session["user_id"])
 
+    for share in portfolio:
+        share["total_value"] = lookup(share["symbol"])["price"]*share["total"]
+
+    print(portfolio)
+
     return apology("TODO")
 
 
