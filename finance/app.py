@@ -41,12 +41,12 @@ def index():
     save = portfolio[0]
 
     for share in portfolio:
-        for key in share:
-            if key in save.keys():
-                if key in final.keys():
-                    final[key] = share[key]
+        for k, v in share.items():
+            if k == in save.keys():
+                if share[key] in final.keys():
+                    final[share[key]] = share[key]
                 else:
-                    final[key] = share[key]
+                    final[share[key]] += share[key]
 
         save = share;
 
