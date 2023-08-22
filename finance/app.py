@@ -80,6 +80,7 @@ def buy():
 
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], lookedup["name"], shares, lookedup["price"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+        db.execute("UPDATE owned_shares (user_id, symbol, total) VALUES (?, ?, ?)", session["user_id"], lookedup["name"], )
 
         return redirect("/")
 
@@ -224,5 +225,5 @@ def sell():
 
         if db.execute("SELECT total FROM owned_shares WHERE user_id = ?", session["user_id"])[0]["total"] == 0:
             db.execute("DELETE FROM owned_shares WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            
+
         return redirect("/")
