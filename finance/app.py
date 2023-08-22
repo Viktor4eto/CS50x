@@ -114,16 +114,18 @@ def register():
     else:
         username = request.form.get("username")
         password = request.form.get("password")
-        verified = request.form.get("verified-password")
+        verified = request.form.get("verify-password")
 
         if not username:
             return apology("Enter a username", 403)
 
-        if not password and not verified:
+        if not password or not verified:
             return apology("Enter a password and verify it", 403)
 
         if not password == verified:
             return apology("The passwords are not the same", 403)
+
+        db.execute("INSERT ")
 
         return redirect("/")
 
