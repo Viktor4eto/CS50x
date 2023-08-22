@@ -113,8 +113,10 @@ def register():
 
     else:
         username = request.form.get("username")
-        if request.form.get("username") is None or re:
+        if not username:
             return apology("Enter a username", 403)
+
+        if 
         return redirect("/")
 
 
