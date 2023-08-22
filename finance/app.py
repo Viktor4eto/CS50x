@@ -112,8 +112,8 @@ def quote():
         if not value:
             return apology("Invalid symbol", 403)
 
-        return render_template("quoted.html", symbol=symbol, value=value["price"])
-    #return apology("TODO")
+        return render_template("quoted.html", symbol=value["name"], value=value["price"])
+
 
 
 @app.route("/register", methods=["GET", "POST"])
