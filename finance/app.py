@@ -47,7 +47,6 @@ def buy():
     else:
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
-        
 
         if not symbol:
             return apology("Missing symbol", 400)
@@ -62,6 +61,7 @@ def buy():
             return apology("Invalid shares", 400)
 
 
+        print(symbol)
 
         return redirect("/")
 
