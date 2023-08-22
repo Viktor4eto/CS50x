@@ -42,13 +42,12 @@ def index():
 
     for share in portfolio:
         for k, v in share.items():
-            if k == in save.keys():
+            if k == "symbol":
                 if share[key] in final.keys():
                     final[share[key]] = share[key]
                 else:
                     final[share[key]] += share[key]
 
-        save = share;
 
     print(final)
 
