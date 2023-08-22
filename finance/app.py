@@ -77,6 +77,7 @@ def buy():
         cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
 
         lookedup = lookup(symbol)
+        print(lookedup)
         if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
 
