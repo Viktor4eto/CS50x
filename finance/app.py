@@ -247,7 +247,7 @@ def add():
     if request.method == "GET":
         return render_template("add.html")
     else:
-        add = request.form.get("add")
+        add = float(request.form.get("add"))
 
         if add < 0:
             return apology("Invalid number", 400)
