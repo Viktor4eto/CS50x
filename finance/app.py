@@ -76,10 +76,11 @@ def buy():
             return apology("Invalid shares", 400)
 
         result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if not result:
+        if result:
             cash = int(result[0]["cash"])
         else:
-            return apology("op", 400)
+            return apology("oops", 400)
+
         lookedup = lookup(symbol)
 
         if shares*lookedup["price"] > cash:
