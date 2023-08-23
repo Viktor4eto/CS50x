@@ -87,7 +87,7 @@ def buy():
             return apology("Can't afford", 400)
 
         cash -= shares*lookedup["price"]
-
+        print((session["user_id"], lookedup["name"], shares, lookedup["price"], cash));
         db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], lookedup["name"], shares, lookedup["price"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
         if not db.execute(" SELECT symbol FROM owned_shares WHERE symbol = ? AND user_id = ?", lookedup["name"], session["user_id"]):
