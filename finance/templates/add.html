@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="symbol" placeholder="Add Ammount Of MOney" type="text" autofocus>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

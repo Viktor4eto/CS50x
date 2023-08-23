@@ -240,3 +240,9 @@ def sell():
         db.execute("DELETE FROM owned_shares WHERE user_id = ? AND total <= 0", session["user_id"])
 
         return redirect("/")
+
+@app.route("/add", methods=["GET", "POST"])
+@login_required
+def add():
+    if request.method == "GET":
+        return render_template("add.html")
