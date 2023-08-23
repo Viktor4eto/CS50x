@@ -75,6 +75,7 @@ def buy():
         if shares < 1:
             return apology("Invalid shares", 400)
 
+        cash = 0
         result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not result:
             cash = int(result[0]["cash"])
