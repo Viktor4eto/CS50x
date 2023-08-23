@@ -79,7 +79,7 @@ def buy():
         if result:
             cash = int(result[0]["cash"])
         else:
-            return apology()
+            return apology("op", 400)
         lookedup = lookup(symbol)
 
         if shares*lookedup["price"] > cash:
