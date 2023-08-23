@@ -92,7 +92,7 @@ def buy():
         if not db.execute(" SELECT symbol FROM owned_shares WHERE symbol = ? AND user_id = ?", lookedup["name"], session["user_id"]):
             db.execute("INSERT INTO owned_shares (user_id, symbol, total) VALUES(?, ?, ?)", session["user_id"], lookedup["name"], shares)
         else:
-            db.execute("UPDATE owned_shares SET user_id = ?, symbol = ?, total = total + ?", session["user_id"], lookedup["name"], shares)
+            db.execute("UPDATE owned_shares SET total = total + ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], lookedup["name"])
 
 
         return redirect("/")
