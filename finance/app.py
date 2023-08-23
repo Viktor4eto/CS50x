@@ -100,7 +100,7 @@ def buy():
             lookedup["price"],
         )
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
-        
+
         if not db.execute(
             " SELECT symbol FROM owned_shares WHERE symbol = ? AND user_id = ?",
             lookedup["symbol"],
