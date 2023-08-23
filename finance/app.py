@@ -58,7 +58,7 @@ def buy():
 
     else:
         symbol = request.form.get("symbol")
-        print(1)
+
         try:
             shares = int(request.form.get("shares"))
         except ValueError:
@@ -74,18 +74,15 @@ def buy():
 
         if shares < 1:
             return apology("Invalid shares", 400)
-        print(2)
+
 
 
         cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
-        print(3)
 
         lookedup = lookup(symbol)
 
         if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
-
-        print(4)
 
         cash -= shares*lookedup["price"]
 
