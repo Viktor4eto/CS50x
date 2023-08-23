@@ -77,7 +77,7 @@ def buy():
 
         cash = 0
         result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if not result:
+        if result:
             cash = int(result[0]["cash"])
 
         lookedup = lookup(symbol)
