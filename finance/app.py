@@ -1,5 +1,6 @@
 import os
 
+import pdb;
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -57,6 +58,8 @@ def buy():
         return render_template("buy.html")
 
     else:
+
+        pdb.set_trace()
         symbol = request.form.get("symbol")
 
         try:
