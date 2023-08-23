@@ -84,8 +84,6 @@ def buy():
         else:
             return apology("oops", 400)
 
-        lookedup = lookup(symbol)
-
         if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
 
