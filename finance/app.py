@@ -78,21 +78,21 @@ def buy():
         cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
         print(3)
 
-        #lookedup = lookup(symbol)
+        lookedup = lookup(symbol)
 
-        if shares*lookup(symbol)["price"] > cash:
+        if shares*lookedup["price"] > cash:
             return apology("Can't afford", 400)
 
         print(4)
 
-        cash -= shares*lookup(symbol)["price"]
+        cash -= shares*lookedup["price"]
 
-        db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], lookup(symbol)["name"], shares, lookup(symbol)["price"])
+        db.execute("INSERT INTO purchases (user_id, symbol, shares, price) VALUES(?, ?, ?, ?)", session["user_id"], lookedup["name"], shares, lookedup["price"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
-        if not db.execute(" SELECT symbol FROM owned_shares WHERE symbol = ? AND user_id = ?", lookup(symbol)["name"], session["user_id"]):
-            db.execute("INSERT INTO owned_shares (user_id, symbol, total) VALUES(?, ?, ?)", session["user_id"], lookup(symbol)["name"], shares)
+        if not db.execute(" SELECT symbol FROM owned_shares WHERE symbol = ? AND user_id = ?", lookedup["name"], session["user_id"]):
+            db.execute("INSERT INTO owned_shares (user_id, symbol, total) VALUES(?, ?, ?)", session["user_id"], lookedup["name"], shares)
         else:
-            db.execute("UPDATE owned_shares SET user_id = ?, symbol = ?, total = total + ?", session["user_id"], lookup(symbol)["name"], shares)
+            db.execute("UPDATE owned_shares SET user_id = ?, symbol = ?, total = total + ?", session["user_id"], lookedup["name"], shares)
 
 
         return redirect("/")
