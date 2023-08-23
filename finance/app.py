@@ -80,7 +80,7 @@ def buy():
 
         result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if result:
-            cash = int(result[0]["cash"])
+            cash = float(result[0]["cash"])
         else:
             return apology("oops", 400)
 
