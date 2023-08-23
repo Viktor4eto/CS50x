@@ -79,7 +79,7 @@ def buy():
             return apology("Invalid shares", 400)
 
         result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        if result:
+        if not result:
             cash = float(result[0]["cash"])
         else:
             return apology("oops", 400)
