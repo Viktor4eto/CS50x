@@ -76,7 +76,7 @@ def buy():
             return apology("Invalid shares", 400)
 
         cash = 0;
-        if not db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]):
+        if db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]):
             cash = int(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"])
 
         lookedup = lookup(symbol)
